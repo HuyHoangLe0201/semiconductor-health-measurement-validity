@@ -1,0 +1,187 @@
+{
+  "source": {
+    "doi": "10.1109/APEC48143.2025.10977401",
+    "equations": "(1)--(10)",
+    "accepted_manuscript": "https://vbn.aau.dk/ws/portalfiles/portal/779663726/2024360959.pdf"
+  },
+  "scope": "local noise-free averaged observation model at matched operating points; frozen nominal duty; not a controller/HIL reproduction",
+  "assumptions": {
+    "Vdc_V": 800,
+    "grid_peak_V": 325,
+    "Lfilter_H": 0.006,
+    "Rfilter_Ohm": 0.1,
+    "f_Hz": 50,
+    "samples_per_cycle": 400
+  },
+  "targets_and_scales": [
+    "1 mOhm S1 resistance",
+    "20 mV S1 threshold",
+    "1 mOhm filter resistance",
+    "10 mV all-element drop"
+  ],
+  "baseline_cancellation": "stationary nuisance cancels; changing nuisance between records does not",
+  "rows": [
+    {
+      "amplitude_A": 10,
+      "current_phase_rad": -0.6435011087932843,
+      "power_factor": 0.8,
+      "duty_min": 0.07822453046199135,
+      "duty_max": 0.9217754695380087,
+      "local_operator": [
+        1.0,
+        0.14725743828733637,
+        1.983496259642521,
+        0.27729910464924334
+      ],
+      "scaled_target_defect": 0.9762409725243978,
+      "resistance_only_estimate_Ohm": 0.001,
+      "threshold_only_apparent_Ohm": 0.0029451487657467276,
+      "filter_only_apparent_Ohm": 0.001983496259642521,
+      "common_drop_only_apparent_Ohm": 0.0027729910464924334
+    },
+    {
+      "amplitude_A": 10,
+      "current_phase_rad": 0.0,
+      "power_factor": 1.0,
+      "duty_min": 0.09181938929822925,
+      "duty_max": 0.9081806107017707,
+      "local_operator": [
+        1.0,
+        0.1459462401571023,
+        1.8291426339164036,
+        0.2557209952918773
+      ],
+      "scaled_target_defect": 0.9738929310179993,
+      "resistance_only_estimate_Ohm": 0.001,
+      "threshold_only_apparent_Ohm": 0.002918924803142046,
+      "filter_only_apparent_Ohm": 0.0018291426339164037,
+      "common_drop_only_apparent_Ohm": 0.002557209952918773
+    },
+    {
+      "amplitude_A": 10,
+      "current_phase_rad": 0.6435011087932843,
+      "power_factor": 0.8,
+      "duty_min": 0.10640015291530147,
+      "duty_max": 0.8935998470846986,
+      "local_operator": [
+        1.0000000000000002,
+        0.14721177051355525,
+        1.983496259642521,
+        0.27729910464924334
+      ],
+      "scaled_target_defect": 0.9762348971804905,
+      "resistance_only_estimate_Ohm": 0.001,
+      "threshold_only_apparent_Ohm": 0.002944235410271105,
+      "filter_only_apparent_Ohm": 0.001983496259642521,
+      "common_drop_only_apparent_Ohm": 0.0027729910464924334
+    },
+    {
+      "amplitude_A": 20,
+      "current_phase_rad": -0.6435011087932843,
+      "power_factor": 0.8,
+      "duty_min": 0.06197755478805944,
+      "duty_max": 0.9380224452119406,
+      "local_operator": [
+        1.0,
+        0.07362719770092677,
+        1.9809245900956522,
+        0.13846978852135416
+      ],
+      "scaled_target_defect": 0.9428733692336086,
+      "resistance_only_estimate_Ohm": 0.001,
+      "threshold_only_apparent_Ohm": 0.0014725439540185354,
+      "filter_only_apparent_Ohm": 0.0019809245900956523,
+      "common_drop_only_apparent_Ohm": 0.0013846978852135416
+    },
+    {
+      "amplitude_A": 20,
+      "current_phase_rad": 0.0,
+      "power_factor": 1.0,
+      "duty_min": 0.08854259644664397,
+      "duty_max": 0.911457403553356,
+      "local_operator": [
+        1.0000000000000002,
+        0.07296198458288568,
+        1.8269554108077632,
+        0.1277076066521211
+      ],
+      "scaled_target_defect": 0.93622314863133,
+      "resistance_only_estimate_Ohm": 0.001,
+      "threshold_only_apparent_Ohm": 0.0014592396916577135,
+      "filter_only_apparent_Ohm": 0.0018269554108077634,
+      "common_drop_only_apparent_Ohm": 0.001277076066521211
+    },
+    {
+      "amplitude_A": 20,
+      "current_phase_rad": 0.6435011087932843,
+      "power_factor": 0.8,
+      "duty_min": 0.1180084574163971,
+      "duty_max": 0.8819915425836029,
+      "local_operator": [
+        0.9999999999999999,
+        0.07358158913694877,
+        1.9809245900956522,
+        0.13846978852135422
+      ],
+      "scaled_target_defect": 0.9428558200675562,
+      "resistance_only_estimate_Ohm": 0.001,
+      "threshold_only_apparent_Ohm": 0.0014716317827389756,
+      "filter_only_apparent_Ohm": 0.0019809245900956523,
+      "common_drop_only_apparent_Ohm": 0.0013846978852135423
+    },
+    {
+      "amplitude_A": 40,
+      "current_phase_rad": -0.6435011087932843,
+      "power_factor": 0.8,
+      "duty_min": 0.027621355845029727,
+      "duty_max": 0.9723786441549704,
+      "local_operator": [
+        1.0,
+        0.036812083310221295,
+        1.975801204796244,
+        0.06905582785843502
+      ],
+      "scaled_target_defect": 0.9116789211286159,
+      "resistance_only_estimate_Ohm": 0.001,
+      "threshold_only_apparent_Ohm": 0.0007362416662044259,
+      "filter_only_apparent_Ohm": 0.0019758012047962443,
+      "common_drop_only_apparent_Ohm": 0.0006905582785843502
+    },
+    {
+      "amplitude_A": 40,
+      "current_phase_rad": 0.0,
+      "power_factor": 1.0,
+      "duty_min": 0.07808863115766784,
+      "duty_max": 0.9219113688423322,
+      "local_operator": [
+        1.0000000000000004,
+        0.03646989664675071,
+        1.8225966195684875,
+        0.06370145948839191
+      ],
+      "scaled_target_defect": 0.8999299465301928,
+      "resistance_only_estimate_Ohm": 0.001,
+      "threshold_only_apparent_Ohm": 0.0007293979329350142,
+      "filter_only_apparent_Ohm": 0.0018225966195684876,
+      "common_drop_only_apparent_Ohm": 0.0006370145948839191
+    },
+    {
+      "amplitude_A": 40,
+      "current_phase_rad": 0.6435011087932843,
+      "power_factor": 0.8,
+      "duty_min": 0.1377148985167942,
+      "duty_max": 0.8622851014832058,
+      "local_operator": [
+        1.0,
+        0.036766592706435924,
+        1.9758012047962448,
+        0.06905582785843506
+      ],
+      "scaled_target_defect": 0.9116579836896589,
+      "resistance_only_estimate_Ohm": 0.001,
+      "threshold_only_apparent_Ohm": 0.0007353318541287185,
+      "filter_only_apparent_Ohm": 0.0019758012047962448,
+      "common_drop_only_apparent_Ohm": 0.0006905582785843507
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "original_units_preserved": true,
+  "unused_fixed_basis_fit": true,
+  "units": [
+    {
+      "original": "scripts\\sil_core.c",
+      "original_sha256": "e211ecab0b95bfa5a1ed627aec55a205e9e17ce64a382b6ac5a1918fde72d031",
+      "derived": "validation\\trajectory_native\\tv_core.c",
+      "derived_sha256": "39d605e132856031de15a25427855ce08590d34475a9c7d16548c18933136a3a",
+      "substitutions": [
+        [
+          "#include \"sil_basis.h\"",
+          "#include \"sil_basis.h\"\n#include \"tv_config.h\""
+        ],
+        [
+          "16+5*sin(2*3.141592653589793*7*(t+50e-6))+3*sin(2*3.141592653589793*13*(t+50e-6))",
+          "tv_amp*(1+tv_mod*(5*sin(2*3.141592653589793*7*(t+50e-6))+3*sin(2*3.141592653589793*13*(t+50e-6)))/16)"
+        ],
+        [
+          "20*sin(2*3.141592653589793*25",
+          "tv_E*sin(2*3.141592653589793*25"
+        ],
+        [
+          ".025*(u[j]-mean-.25*sense[j])",
+          "(50e-6/tv_L)*(u[j]-mean-tv_R*sense[j])"
+        ],
+        [
+          "+shift[j]-.45",
+          "+shift[j]+tv_phase"
+        ],
+        [
+          "-.25*mid[p]",
+          "-tv_R*mid[p]"
+        ],
+        [
+          "40*(hi[p]-lo[p])",
+          "(tv_L/50e-6)*(hi[p]-lo[p])"
+        ]
+      ]
+    },
+    {
+      "original": "scripts\\sil_plant.c",
+      "original_sha256": "d60a65af24e71f02c09e04bce9236cca0414e816dcac415a4e3c9a553852983b",
+      "derived": "validation\\trajectory_native\\tv_plant.c",
+      "derived_sha256": "803871b706a4c46c05bde6ce0795c5240f717938b8ff9675c9ec45d4f81f3f99",
+      "substitutions": [
+        [
+          "#include <string.h>",
+          "#include <string.h>\n#include \"tv_config.h\""
+        ],
+        [
+          "-20*sin(157.07963267948966",
+          "-tv_E*sin(157.07963267948966"
+        ],
+        [
+          "-.25*current[phase])/.002",
+          "-tv_R*current[phase])/tv_L"
+        ]
+      ]
+    }
+  ],
+  "build_returncode": 0
+}

@@ -25,6 +25,13 @@ the supported 0.2 mOhm resistance contrast is detected in 19.25% (16-bit) and
 Null calibration is per-target and marginal under exchangeable simulated records;
 it is not a guarantee for repeated online monitoring or physical calibration.
 
+## Added operating evidence
+
+Release v1.1.0 adds 144 controller-generated records, complete-operator support
+and conditioning diagnostics, and a local observation audit of a published
+estimator. See [OPERATING_EVIDENCE.md](OPERATING_EVIDENCE.md) for scope and commands.
+The audit is not a reproduction of the published HIL implementation.
+
 ## Quick verification
 
 Use Python with the dependencies in `requirements.txt`:
@@ -81,7 +88,7 @@ scientific formulas were preserved.
 
 ## Version and citation
 
-The paper's reproducibility snapshot is release **v1.0.0**. Cite its release URL
+The current reproducibility snapshot is release **v1.1.0**; v1.0.0 remains available. Cite its release URL
 and the corresponding full commit SHA; see `CITATION.md`. No dataset DOI is
 assigned. Publication of this repository does not establish manuscript acceptance.
 
