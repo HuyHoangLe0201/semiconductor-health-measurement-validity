@@ -1,0 +1,276 @@
+{
+  "seed": 20261009,
+  "plant_parameters": {
+    "Vdc": 300.0,
+    "L": 0.002,
+    "Rs": 0.25,
+    "Ts": 5e-05,
+    "td": 1e-06,
+    "omega": 157.07963267948966,
+    "E": 20.0,
+    "N": 8192,
+    "sigma": 0.002
+  },
+  "plant_scope": "Switching-event R-L-back-EMF simulation with imposed rotor speed, ideal devices and blanking; no parasitic, mechanical or thermal states.",
+  "fixture": {
+    "periods": 972,
+    "connected_vertices": 18,
+    "rank": 36,
+    "affine_rank_per_triple": 3,
+    "scope": "Abstract finite separating experiment, not a plant trajectory."
+  },
+  "detection": [
+    {
+      "target": 0,
+      "power": 0.35164950255744715,
+      "halfwidth95": 0.062081121599522796,
+      "approx_MDE80": 0.08873915743809548
+    },
+    {
+      "target": 1,
+      "power": 0.17657041224604908,
+      "halfwidth95": 0.0003820655087834723,
+      "approx_MDE80": 0.0005461269136584544
+    }
+  ],
+  "conditions": [
+    {
+      "name": "matched",
+      "estimate": [
+        0.051589059390525015,
+        0.00019915670287296225
+      ],
+      "nominal_SE": [
+        0.0011897388698872031,
+        9.358921412701662e-05
+      ],
+      "rank": 36,
+      "estimability_defect": [
+        2.1094237467877974e-13,
+        8.933825901280557e-15
+      ],
+      "bias": [
+        0.001589059390525012,
+        -8.432971270377551e-07
+      ],
+      "retained_periods": 7333,
+      "minimum_scaled_singular_value": 12.762051309273552,
+      "representative_nuisance": [
+        2.9897559497778614,
+        3.369489387442378e-06
+      ]
+    },
+    {
+      "name": "noisy_feedback",
+      "estimate": [
+        0.051726836125963405,
+        0.00018937820578410897
+      ],
+      "nominal_SE": [
+        0.0012638577958969052,
+        8.118140953684193e-05
+      ],
+      "rank": 36,
+      "estimability_defect": [
+        1.0724754417879012e-13,
+        1.5404344466674047e-15
+      ],
+      "bias": [
+        0.0017268361259634019,
+        -1.0621794215891043e-05
+      ],
+      "retained_periods": 7336,
+      "minimum_scaled_singular_value": 13.449813589943066,
+      "representative_nuisance": [
+        2.9901001761584056,
+        2.268732768994069e-06
+      ]
+    },
+    {
+      "name": "L_and_EMF_mismatch",
+      "estimate": [
+        3.0193780739449307,
+        0.00019359932301951654
+      ],
+      "nominal_SE": [
+        0.0012801740828455,
+        8.079623020291491e-05
+      ],
+      "rank": 36,
+      "estimability_defect": [
+        2.353672812205332e-14,
+        5.124373148035488e-15
+      ],
+      "bias": [
+        2.969378073944931,
+        -6.400676980483465e-06
+      ],
+      "retained_periods": 7348,
+      "minimum_scaled_singular_value": 13.281845390720942,
+      "representative_nuisance": [
+        2.9899878202537185,
+        -0.0009249518290707188
+      ]
+    },
+    {
+      "name": "extended_nuisance",
+      "estimate": [
+        299.7999999690219,
+        8.526512829121202e-13
+      ],
+      "nominal_SE": [
+        464.26023092490215,
+        0.00031290972272489794
+      ],
+      "rank": 38,
+      "estimability_defect": [
+        1.7881393432617188e-07,
+        7.574385563202668e-12
+      ],
+      "bias": [
+        299.74999996902187,
+        -0.00019999999914734873
+      ],
+      "retained_periods": 7348,
+      "minimum_scaled_singular_value": 4.15692100372446e-05,
+      "representative_nuisance": [
+        2.9999999999988383,
+        -0.09371760777096938,
+        -0.001999999999792834,
+        -19.99999999783904
+      ]
+    },
+    {
+      "name": "independent_L_reference",
+      "estimate": [
+        0.052015471150095194,
+        0.00019516693822429348
+      ],
+      "nominal_SE": [
+        0.00391889245683766,
+        8.163817768637571e-05
+      ],
+      "rank": 37,
+      "estimability_defect": [
+        1.2878587085651816e-13,
+        1.6861512186494565e-15
+      ],
+      "bias": [
+        0.002015471150095191,
+        -4.833061775706525e-06
+      ],
+      "retained_periods": 7348,
+      "minimum_scaled_singular_value": 5.414215914095512,
+      "representative_nuisance": [
+        2.9898927019083312,
+        2.9540624179882034e-06,
+        0.19995402152020653
+      ]
+    }
+  ],
+  "measurement_MC": {
+    "trials": 100,
+    "scope": "Repeated sensor perturbations conditional on recorded gates; no controller rerun. Intervals use each refitted measured-design nominal SE.",
+    "mean": [
+      0.051629941136885356,
+      0.00021155514667937464
+    ],
+    "SD": [
+      0.0013209663127540037,
+      9.283027209219787e-05
+    ],
+    "RMSE": [
+      0.0020938506606603337,
+      9.308494098040908e-05
+    ],
+    "nominal_SE": [
+      0.0011897388698872031,
+      9.358921412701662e-05
+    ],
+    "nominal_coverage": [
+      0.66,
+      0.97
+    ],
+    "mean_refitted_SE": [
+      0.0011911057793285314,
+      9.364756753298826e-05
+    ]
+  },
+  "integration_max_difference_A": 2.1022467425746427e-05,
+  "NPC_gate_replay": {
+    "ambiguous_max_current_difference_A": 0.0,
+    "single_device_max_current_difference_A": 0.06900139600725319
+  },
+  "healthy_reference": {
+    "scope": "Two independently generated healthy records; both contrasts are differences of fitted health representatives. Stationary mismatch cancels common offset; changed machine violates that stationarity assumption. Nominal SE assumes independent measurement records and excludes discrepancy.",
+    "records": [
+      {
+        "name": "stationary_machine",
+        "healthy_estimate": [
+          2.969864368908093,
+          -2.9384589743817937e-06
+        ],
+        "nominal_SE": [
+          0.0011261720696709903,
+          8.46240615403529e-05
+        ],
+        "rank": 36,
+        "details": {
+          "retained_periods": 7315,
+          "minimum_scaled_singular_value": 11.649281017836,
+          "representative_nuisance": [
+            2.989947130584735,
+            -0.0009280234462254558
+          ]
+        },
+        "relative_estimate": [
+          0.04951370503683794,
+          0.00019653778199389834
+        ],
+        "nominal_relative_SE": [
+          0.0017050246956851853,
+          0.00011700112224499325
+        ]
+      },
+      {
+        "name": "changed_machine",
+        "healthy_estimate": [
+          0.0016434318502964633,
+          -3.0233970396184235e-06
+        ],
+        "nominal_SE": [
+          0.0012595173379066973,
+          0.00010489148241962562
+        ],
+        "rank": 36,
+        "details": {
+          "retained_periods": 7359,
+          "minimum_scaled_singular_value": 11.918368138607125,
+          "representative_nuisance": [
+            2.9898104143876103,
+            -1.8342316498686148e-06
+          ]
+        },
+        "relative_estimate": [
+          3.0177346420946343,
+          0.00019662272005913496
+        ],
+        "nominal_relative_SE": [
+          0.0017958924263097975,
+          0.00013240186516506877
+        ]
+      }
+    ]
+  },
+  "integration_target_difference": [
+    3.5715947560577277e-10,
+    6.520493780332037e-13
+  ],
+  "integration": {
+    "method": "RK4 with bisection at stage sign changes",
+    "hold_subdivisions": 2,
+    "blanking_subdivisions": 1,
+    "maximum_sign_bisection_depth": 10,
+    "convergence_hold_subdivisions": 4
+  }
+}

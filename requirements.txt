@@ -1,0 +1,6 @@
+numpy
+scipy
+sympy
+matplotlib
+PyMuPDF
+Pillow

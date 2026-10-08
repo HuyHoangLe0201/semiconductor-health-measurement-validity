@@ -1,0 +1,813 @@
+{
+  "evidence_kind": "closed_loop_software_in_the_loop",
+  "hardware_validation_performed": false,
+  "periods": 4096,
+  "Ts_s": 5e-05,
+  "model": {
+    "device": "IKW40N65H5",
+    "source": "http<LOCAL_PATH>",
+    "revision": "2.1 (2015-05-06)",
+    "source_pages": {
+      "static_anchors": 5,
+      "Foster_coefficients": 12
+    },
+    "transistor_R_K_W": [
+      0.08245484,
+      0.144197,
+      0.2151774,
+      0.1581708
+    ],
+    "transistor_tau_s": [
+      7.3e-05,
+      0.0007,
+      0.01235548,
+      0.08020881
+    ],
+    "diode_R_K_W": [
+      0.6701584,
+      0.775759,
+      0.3540826
+    ],
+    "diode_tau_s": [
+      0.00034,
+      0.0047,
+      0.04680901
+    ],
+    "transistor_static_anchor": {
+      "current_A": 40,
+      "T_C": [
+        25,
+        125,
+        175
+      ],
+      "voltage_V": [
+        1.65,
+        1.85,
+        1.95
+      ],
+      "gate_V": 15
+    },
+    "diode_static_anchor": {
+      "current_A": 20,
+      "T_C": [
+        25,
+        125,
+        175
+      ],
+      "voltage_V": [
+        1.45,
+        1.4,
+        1.4
+      ],
+      "gate_V": 0
+    },
+    "assumed_slopes_ohm": {
+      "transistor": 0.02,
+      "diode": 0.015
+    },
+    "electrical_rule": "Assumed affine current slopes; offsets chosen to reproduce static typical anchors; piecewise linear temperature interpolation at fixed slopes. Not a digitized full output curve or measured calibration.",
+    "boundary": "Fixed case temperature, 25 or 75 C. Foster modal temperature rises; no shared dynamic case or ambient-temperature interpretation.",
+    "losses": "Conduction only; switching energy, recovery, cross-coupling and parasitics excluded.",
+    "temperature_domain_C": [
+      25,
+      175
+    ]
+  },
+  "seed": 20261012,
+  "paired_noise_rule": "Common random numbers in each healthy/injected pair, independently regenerated feedback and plant; one realization per condition, not population confidence coverage",
+  "sensing": "Three independently quantized channels, bipolar [-32,32) A; per-channel 2 mA Gaussian noise before ADC; backward sampling offsets; no projection of measured currents",
+  "conditions": [
+    {
+      "name": "clean25",
+      "Tcase": 25,
+      "label": "Clean 25 C",
+      "tex_label": "Ideal sensing, 25 $^\\circ$C case",
+      "contrast": [
+        0.04991587335533366,
+        0.0001955115108171912
+      ]
+    },
+    {
+      "name": "clean75",
+      "Tcase": 75,
+      "label": "Clean 75 C",
+      "tex_label": "Ideal sensing, 75 $^\\circ$C case",
+      "contrast": [
+        0.04993544297426097,
+        0.0001960351999537994
+      ]
+    },
+    {
+      "name": "adc16",
+      "Tcase": 75,
+      "bits": 16,
+      "noise": 0.002,
+      "label": "16-bit + noise",
+      "tex_label": "16-bit ADC + 2 mA noise",
+      "contrast": [
+        0.0478628378446581,
+        0.00020770684505016617
+      ]
+    },
+    {
+      "name": "adc12",
+      "Tcase": 75,
+      "bits": 12,
+      "noise": 0.002,
+      "label": "12-bit + noise",
+      "tex_label": "12-bit ADC + 2 mA noise",
+      "contrast": [
+        0.04967557101799474,
+        -4.074757780582808e-05
+      ]
+    },
+    {
+      "name": "skew",
+      "Tcase": 75,
+      "bits": 16,
+      "noise": 0.002,
+      "skew_us": [
+        0,
+        1,
+        2
+      ],
+      "label": "ADC + skew",
+      "tex_label": "16-bit ADC/noise + 0/1/2 $\\mu$s skew",
+      "contrast": [
+        0.12490271732450223,
+        0.002511833030434769
+      ]
+    },
+    {
+      "name": "inputdelay",
+      "Tcase": 75,
+      "bits": 16,
+      "noise": 0.002,
+      "input_delay": 1,
+      "label": "ADC + input delay",
+      "tex_label": "16-bit ADC/noise + one-period input delay",
+      "contrast": [
+        0.03994973966042086,
+        0.00033435789049272787
+      ]
+    },
+    {
+      "name": "actdelay",
+      "Tcase": 75,
+      "actuation_us": 2,
+      "label": "Gate delay, unknown",
+      "tex_label": "Extra 2 $\\mu$s gate delay, undeclared",
+      "contrast": [
+        -0.021928834080556903,
+        -0.0004058577618235599
+      ]
+    },
+    {
+      "name": "combined",
+      "Tcase": 75,
+      "bits": 12,
+      "noise": 0.002,
+      "input_delay": 1,
+      "skew_us": [
+        0,
+        1,
+        2
+      ],
+      "actuation_us": 2,
+      "label": "Combined",
+      "tex_label": "12-bit/noise + skew + input/gate delay",
+      "contrast": [
+        -0.005247871668734971,
+        0.03133271490279746
+      ]
+    },
+    {
+      "name": "clean75_noT",
+      "label": "75 C, no T correction",
+      "tex_label": "75 $^\\circ$C case, no thermal correction",
+      "contrast": [
+        0.04949080145794675,
+        0.0003029021866610666
+      ]
+    },
+    {
+      "name": "actdelay_recorded",
+      "label": "Gate delay, recorded",
+      "tex_label": "Extra 2 $\\mu$s gate delay, recorded",
+      "contrast": [
+        0.05022778071661445,
+        0.000202431242250878
+      ]
+    },
+    {
+      "name": "offset2K",
+      "label": "Junction offset +2 K",
+      "tex_label": "Injected-record junction offset +2 K",
+      "contrast": [
+        0.04493544297425323,
+        0.000196035199953285
+      ]
+    },
+    {
+      "name": "warming_noT",
+      "label": "Healthy warming, no T",
+      "tex_label": "Healthy 25-to-75 $^\\circ$C warming, no correction",
+      "truth": [
+        0.0,
+        0.0
+      ],
+      "contrast": [
+        0.12427900674576783,
+        0.00013027243437657962
+      ]
+    },
+    {
+      "name": "warming_oracle",
+      "label": "Healthy warming, oracle T",
+      "tex_label": "Healthy warming, oracle junction correction",
+      "truth": [
+        0.0,
+        0.0
+      ],
+      "contrast": [
+        4.0466217452517e-05,
+        2.3173224836869066e-06
+      ]
+    }
+  ],
+  "records": {
+    "clean25_healthy": {
+      "estimate": [
+        0.0015727459065717566,
+        -1.925076407128411e-06
+      ],
+      "nominal_SE": [
+        0.0015217691656959304,
+        0.0001248995672782416
+      ],
+      "rank": 36,
+      "retained": 3707,
+      "C_python_difference": [
+        3.664603343001005e-17,
+        3.584643432780199e-18
+      ],
+      "target_defect": [
+        2.0161650127192843e-13,
+        1.887379141862766e-15
+      ],
+      "fit_elapsed_s": 0.10370590002276003,
+      "QR_min_scaled_diagonal": 0.07116449660476298
+    },
+    "clean25_aged": {
+      "estimate": [
+        0.05148861926190541,
+        0.00019358643441006279
+      ],
+      "nominal_SE": [
+        0.001851616473917836,
+        0.00011599946573653788
+      ],
+      "rank": 36,
+      "retained": 3696,
+      "C_python_difference": [
+        6.938893903907228e-17,
+        6.965998958219366e-18
+      ],
+      "target_defect": [
+        7.682743330406083e-14,
+        2.366162821232365e-15
+      ],
+      "fit_elapsed_s": 0.6146134999580681,
+      "QR_min_scaled_diagonal": 0.0766371640125872
+    },
+    "clean75_healthy": {
+      "estimate": [
+        0.0016132121240242736,
+        3.922460765584956e-07
+      ],
+      "nominal_SE": [
+        0.0016984960956041165,
+        0.00011627645130690608
+      ],
+      "rank": 36,
+      "retained": 3689,
+      "C_python_difference": [
+        1.1709383462843448e-17,
+        4.354808140071172e-19
+      ],
+      "target_defect": [
+        7.815970093361102e-14,
+        1.7763568394002505e-15
+      ],
+      "fit_elapsed_s": 0.1353426999412477,
+      "QR_min_scaled_diagonal": 0.07772333479192509
+    },
+    "clean75_aged": {
+      "estimate": [
+        0.05154865509828524,
+        0.0001964274460303579
+      ],
+      "nominal_SE": [
+        0.0017687364935240566,
+        0.00013136988156985278
+      ],
+      "rank": 36,
+      "retained": 3669,
+      "C_python_difference": [
+        2.220446049250313e-16,
+        7.562310153086393e-18
+      ],
+      "target_defect": [
+        5.218048215738236e-14,
+        1.0880185641326534e-14
+      ],
+      "fit_elapsed_s": 0.32961060001980513,
+      "QR_min_scaled_diagonal": 0.07839885757682581
+    },
+    "adc16_healthy": {
+      "estimate": [
+        0.001694064337891565,
+        -8.872309660070881e-05
+      ],
+      "nominal_SE": [
+        0.0018527967617564195,
+        0.00012856831853559188
+      ],
+      "rank": 36,
+      "retained": 3705,
+      "C_python_difference": [
+        2.168404344971009e-17,
+        2.710505431213761e-20
+      ],
+      "target_defect": [
+        3.4916514124461173e-14,
+        3.6637359812630166e-15
+      ],
+      "fit_elapsed_s": 0.4943775999126956,
+      "QR_min_scaled_diagonal": 0.0669530540308065
+    },
+    "adc16_aged": {
+      "estimate": [
+        0.04955690218254966,
+        0.00011898374844945735
+      ],
+      "nominal_SE": [
+        0.001920160461290405,
+        0.00012696164006435973
+      ],
+      "rank": 36,
+      "retained": 3677,
+      "C_python_difference": [
+        9.020562075079397e-17,
+        3.835365185167472e-18
+      ],
+      "target_defect": [
+        6.750155989720952e-14,
+        3.8441472227646045e-15
+      ],
+      "fit_elapsed_s": 0.10738669999409467,
+      "QR_min_scaled_diagonal": 0.07367631114150208
+    },
+    "adc12_healthy": {
+      "estimate": [
+        -0.00182148556425998,
+        -0.0002972510214666098
+      ],
+      "nominal_SE": [
+        0.0014812824752333243,
+        0.00012840365609311524
+      ],
+      "rank": 36,
+      "retained": 3697,
+      "C_python_difference": [
+        7.39425881635114e-17,
+        9.540979117872439e-18
+      ],
+      "target_defect": [
+        1.9584334154387761e-13,
+        6.8833827526759706e-15
+      ],
+      "fit_elapsed_s": 0.37874199997168034,
+      "QR_min_scaled_diagonal": 0.07436757978947087
+    },
+    "adc12_aged": {
+      "estimate": [
+        0.04785408545373476,
+        -0.0003379985992724379
+      ],
+      "nominal_SE": [
+        0.0015433685432351162,
+        0.0001403415378100266
+      ],
+      "rank": 36,
+      "retained": 3675,
+      "C_python_difference": [
+        2.636779683484747e-16,
+        2.9002408113987244e-17
+      ],
+      "target_defect": [
+        1.0014211682118912e-13,
+        2.7755575615628914e-15
+      ],
+      "fit_elapsed_s": 0.09300039999652654,
+      "QR_min_scaled_diagonal": 0.06819970628846045
+    },
+    "skew_healthy": {
+      "estimate": [
+        0.17089591028023457,
+        -0.0015250771193365984
+      ],
+      "nominal_SE": [
+        0.0016935503811997727,
+        0.00011885892707921215
+      ],
+      "rank": 36,
+      "retained": 3690,
+      "C_python_difference": [
+        1.8041124150158794e-15,
+        1.3704315460216776e-16
+      ],
+      "target_defect": [
+        9.725553695716371e-14,
+        3.58567342484406e-15
+      ],
+      "fit_elapsed_s": 0.1343252999940887,
+      "QR_min_scaled_diagonal": 0.07810364666884748
+    },
+    "skew_aged": {
+      "estimate": [
+        0.2957986276047368,
+        0.0009867559110981708
+      ],
+      "nominal_SE": [
+        0.001822764875615321,
+        0.00012016902974787865
+      ],
+      "rank": 36,
+      "retained": 3691,
+      "C_python_difference": [
+        2.0539125955565396e-15,
+        3.252606517456513e-17
+      ],
+      "target_defect": [
+        2.842170943040401e-14,
+        8.992806499463768e-15
+      ],
+      "fit_elapsed_s": 1.2570884000742808,
+      "QR_min_scaled_diagonal": 0.07258430928071201
+    },
+    "inputdelay_healthy": {
+      "estimate": [
+        0.000975086312407419,
+        0.00014902140490125813
+      ],
+      "nominal_SE": [
+        0.004946633608023295,
+        0.0002891109145634094
+      ],
+      "rank": 36,
+      "retained": 3433,
+      "C_python_difference": [
+        3.924811864397526e-17,
+        1.474514954580286e-17
+      ],
+      "target_defect": [
+        1.3733458814613186e-13,
+        7.771561172376096e-15
+      ],
+      "fit_elapsed_s": 0.09627370000816882,
+      "QR_min_scaled_diagonal": 0.06559583624044563
+    },
+    "inputdelay_aged": {
+      "estimate": [
+        0.04092482597282828,
+        0.000483379295393986
+      ],
+      "nominal_SE": [
+        0.005577616851575699,
+        0.00025832306072606374
+      ],
+      "rank": 36,
+      "retained": 3362,
+      "C_python_difference": [
+        2.0816681711721685e-17,
+        1.0842021724855044e-18
+      ],
+      "target_defect": [
+        9.037215420448774e-14,
+        3.0808688933348094e-15
+      ],
+      "fit_elapsed_s": 0.20997149997856468,
+      "QR_min_scaled_diagonal": 0.061581395407657044
+    },
+    "actdelay_healthy": {
+      "estimate": [
+        0.4840131391689861,
+        0.002341581994347159
+      ],
+      "nominal_SE": [
+        0.0016763998033891773,
+        0.00011558641293737928
+      ],
+      "rank": 36,
+      "retained": 3673,
+      "C_python_difference": [
+        6.106226635438361e-16,
+        1.1058862159352145e-16
+      ],
+      "target_defect": [
+        2.4646951146678475e-14,
+        9.492406860545088e-15
+      ],
+      "fit_elapsed_s": 0.09281960001681,
+      "QR_min_scaled_diagonal": 0.07879152785819943
+    },
+    "actdelay_aged": {
+      "estimate": [
+        0.4620843050884292,
+        0.0019357242325235991
+      ],
+      "nominal_SE": [
+        0.0017076568726700017,
+        0.00010122660495997744
+      ],
+      "rank": 36,
+      "retained": 3716,
+      "C_python_difference": [
+        6.217248937900877e-15,
+        1.496198998029996e-16
+      ],
+      "target_defect": [
+        9.137135492665038e-14,
+        6.83481049534862e-15
+      ],
+      "fit_elapsed_s": 0.12104390002787113,
+      "QR_min_scaled_diagonal": 0.08063385666331113
+    },
+    "combined_healthy": {
+      "estimate": [
+        0.30427769608107974,
+        0.00994226104351788
+      ],
+      "nominal_SE": [
+        0.005094357853560092,
+        0.00033112768148896955
+      ],
+      "rank": 36,
+      "retained": 3394,
+      "C_python_difference": [
+        1.3822276656583199e-14,
+        5.2197829392142125e-15
+      ],
+      "target_defect": [
+        8.440470544712753e-14,
+        1.842276331487369e-15
+      ],
+      "fit_elapsed_s": 0.28041829995345324,
+      "QR_min_scaled_diagonal": 0.06562219545730007
+    },
+    "combined_aged": {
+      "estimate": [
+        0.29902982441234477,
+        0.04127497594631534
+      ],
+      "nominal_SE": [
+        0.005329814313389659,
+        0.0003493402472362702
+      ],
+      "rank": 36,
+      "retained": 3338,
+      "C_python_difference": [
+        6.722400414105323e-14,
+        1.27675647831893e-15
+      ],
+      "target_defect": [
+        7.624977038656056e-14,
+        3.916571927886636e-15
+      ],
+      "fit_elapsed_s": 0.2581814000150189,
+      "QR_min_scaled_diagonal": 0.06437213383637855
+    },
+    "clean75_healthy_noT": {
+      "estimate": [
+        0.12289180691504688,
+        5.8107454047026917e-05
+      ],
+      "nominal_SE": [
+        0.0016984960956041165,
+        0.00011627645130690608
+      ],
+      "rank": 36,
+      "retained": 3689,
+      "C_python_difference": [
+        1.2628786905111156e-15,
+        5.68054175746624e-17
+      ],
+      "target_defect": [
+        7.815970093361102e-14,
+        1.7763568394002505e-15
+      ],
+      "fit_elapsed_s": 0.34282230003736913,
+      "QR_min_scaled_diagonal": 0.07772333479192509
+    },
+    "clean75_aged_noT": {
+      "estimate": [
+        0.17238260837299363,
+        0.00036100964070809354
+      ],
+      "nominal_SE": [
+        0.0017687364935240566,
+        0.00013136988156985278
+      ],
+      "rank": 36,
+      "retained": 3669,
+      "C_python_difference": [
+        4.163336342344337e-16,
+        4.716279450311944e-17
+      ],
+      "target_defect": [
+        5.218048215738236e-14,
+        1.0880185641326534e-14
+      ],
+      "fit_elapsed_s": 0.2356281999964267,
+      "QR_min_scaled_diagonal": 0.07839885757682581
+    },
+    "actdelay_healthy_recorded": {
+      "estimate": [
+        0.0001396766639914615,
+        -1.3770933973736775e-05
+      ],
+      "nominal_SE": [
+        0.0016785078943203132,
+        0.00011589747824293492
+      ],
+      "rank": 36,
+      "retained": 3673,
+      "C_python_difference": [
+        8.023096076392733e-18,
+        3.469446951953614e-18
+      ],
+      "target_defect": [
+        2.1160850849355484e-13,
+        1.0380585280245214e-14
+      ],
+      "fit_elapsed_s": 0.09826160001102835,
+      "QR_min_scaled_diagonal": 0.07857127434746163
+    },
+    "actdelay_aged_recorded": {
+      "estimate": [
+        0.05036745738060591,
+        0.00018866030827714123
+      ],
+      "nominal_SE": [
+        0.0017101528142638744,
+        0.00010136532072501063
+      ],
+      "rank": 36,
+      "retained": 3716,
+      "C_python_difference": [
+        2.498001805406602e-16,
+        2.482822974991805e-17
+      ],
+      "target_defect": [
+        3.2085445411667024e-14,
+        1.2247147740396258e-15
+      ],
+      "fit_elapsed_s": 0.2045225000474602,
+      "QR_min_scaled_diagonal": 0.08044698734577846
+    },
+    "clean75_aged_offset2K": {
+      "estimate": [
+        0.046548655098277505,
+        0.0001964274460298435
+      ],
+      "nominal_SE": [
+        0.0017687364935240566,
+        0.00013136988156985278
+      ],
+      "rank": 36,
+      "retained": 3669,
+      "C_python_difference": [
+        1.0408340855860843e-16,
+        6.911788849595091e-18
+      ],
+      "target_defect": [
+        5.218048215738236e-14,
+        1.0880185641326534e-14
+      ],
+      "fit_elapsed_s": 0.6098884999519214,
+      "QR_min_scaled_diagonal": 0.07839885757682581
+    }
+  },
+  "checks": {
+    "controller_random_vectors": 2000,
+    "controller_mismatches": 0,
+    "nonseparating_status": -3,
+    "thermal_Rsum_verified": true,
+    "static_anchors_verified": true,
+    "independent_plant_C_Python_current_difference_A": 3.914521000680793e-07,
+    "independent_plant_C_Python_temperature_difference_K": 2.623984016736358e-07,
+    "operator_X_difference": 3.552713678800501e-15,
+    "operator_y_difference": 7.172040739078511e-14,
+    "operator_retention_match": true,
+    "short_physical_window_status": -4,
+    "short_physical_window_periods": 128
+  },
+  "feedback_MC": {
+    "trials": 5,
+    "seeds": [
+      20261012,
+      20261013,
+      20261014,
+      20261015,
+      20261016
+    ],
+    "contrasts": [
+      [
+        0.04967557101799474,
+        -4.074757780582808e-05
+      ],
+      [
+        0.05784291700708637,
+        0.0006416187823484776
+      ],
+      [
+        0.04869955187662231,
+        0.00017211156705448498
+      ],
+      [
+        0.04991193517250214,
+        8.306399359192385e-05
+      ],
+      [
+        0.05133684226286883,
+        -4.7179218206167656e-05
+      ]
+    ],
+    "mean": [
+      0.05149336346741488,
+      0.00016177350939657813
+    ],
+    "SD": [
+      0.00367260115880399,
+      0.000283385595268574
+    ],
+    "RMSE": [
+      0.0036083976863877,
+      0.0002563341199848993
+    ],
+    "distinct_aged_gate_records": 5,
+    "scope": "Five exploratory closed-loop feedback realizations, common random numbers within each healthy/aged pair; insufficient for confidence-coverage claims"
+  },
+  "refinement": {
+    "scope": "Full window, fixed recorded gates; 4 versus 8 substeps per switching segment",
+    "periods": 4096,
+    "max_current_difference_A": 4.2030087568534213e-05,
+    "max_temperature_difference_K": 2.3406044334706166e-05,
+    "target_difference": [
+      7.428691481403682e-09,
+      -1.4221526002189747e-10
+    ]
+  },
+  "timing": {
+    "repeats": 10000,
+    "median_us": 2.6,
+    "p95_us": 3.8,
+    "max_observed_us": 3605.9,
+    "fit_min_s": 0.09281960001681,
+    "fit_max_s": 1.2570884000742808,
+    "scope": "PC only; native QPC wall timing, single-thread process; no WCET, MCU or HIL timing claim"
+  },
+  "host": {
+    "platform": "Windows-11-10.0.26200-SP0",
+    "processor": "AMD64 Family 23 Model 104 Stepping 1, AuthenticAMD",
+    "python": "3.12.14",
+    "numpy": "2.2.4",
+    "scipy": "1.15.2"
+  },
+  "hashes": {
+    "scripts/sil_core.c": "e211ecab0b95bfa5a1ed627aec55a205e9e17ce64a382b6ac5a1918fde72d031",
+    "scripts/sil_plant.c": "d60a65af24e71f02c09e04bce9236cca0414e816dcac415a4e3c9a553852983b",
+    "scripts/sil_basis.h": "9ae741a7f15526de5719202510fe0548dd46bd66cc9bb578ea01094320487bca",
+    "validation/sil/sil_core.dll": "772f1267a3bbf362d4bb46acac13bca121a4f104c3d0e7a4c5fc5e5d3caf924f",
+    "scripts/sil_validation.py": "59d0c227d7fe981c960a9dfb31408f1e4c1e1da01a2c4c851ccd9a74ae05fd2c"
+  },
+  "electrical_slope_sensitivity": [
+    {
+      "physical_slope_factor": 0.75,
+      "static_anchors_preserved": true,
+      "contrast": [
+        0.05010810985168193,
+        0.0002044241765825663
+      ]
+    },
+    {
+      "physical_slope_factor": 1.25,
+      "static_anchors_preserved": true,
+      "contrast": [
+        0.05002827723304207,
+        0.00019871966760554605
+      ]
+    }
+  ]
+}

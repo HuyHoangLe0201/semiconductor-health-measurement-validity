@@ -1,0 +1,77 @@
+\documentclass[10pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,booktabs,array,graphicx,tikz,pgfplots}
+\usepackage[paperwidth=190mm,paperheight=224mm,margin=10mm]{geometry}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{pdfauthor={},pdftitle={Monochrome mathematical illustrations: semiconductor-health identifiability}}
+\usetikzlibrary{arrows.meta,positioning,calc,patterns}
+\pgfplotsset{compat=1.18}
+\newcommand{\trans}{^{\mathsf T}}\newcommand{\R}{\mathbb R}
+\newcommand{\one}{\mathbf 1}\newcommand{\zero}{\mathbf 0}
+\DeclareMathOperator{\rank}{rank}\DeclareMathOperator{\range}{range}
+\DeclareMathOperator{\diag}{diag}\DeclareMathOperator{\Cov}{Cov}
+\DeclareMathOperator{\Var}{Var}\DeclareMathOperator{\spanop}{span}
+\newcommand{\FigureNote}{Visualization code prepared with assistance from OpenAI Codex.}
+\pagestyle{empty}\setlength{\parindent}{0pt}
+\tikzset{
+ every picture/.style={font=\fontsize{9}{11}\selectfont,>=Latex},
+ every node/.style={font=\fontsize{9}{11}\selectfont,inner sep=2pt},
+ head/.style={font=\fontsize{9.5}{12}\selectfont\bfseries,anchor=west},
+ tinytext/.style={font=\fontsize{8}{10}\selectfont},eq/.style={align=center},
+ wire/.style={draw=black,line width=.5pt},arr/.style={->,black,line width=.65pt},
+ device/.style={draw,fill=white,minimum width=1.1cm,minimum height=.38cm}}
+\pgfplotsset{mathaxis/.style={axis lines=left,axis line style={black,line width=.5pt},
+ tick style={black},tick label style={font=\fontsize{8}{10}\selectfont},
+ label style={font=\fontsize{8.5}{10}\selectfont},grid=major,
+ major grid style={black!15,line width=.2pt},
+ legend style={font=\fontsize{8}{10}\selectfont,draw=none,fill=white},
+ every axis plot/.append style={black}}}
+\newcommand{\PlateTitle}[2]{\small\textbf{Mathematical plate #1}\hfill Monochrome TikZ / PGFPlots\par
+ \vspace{1.5mm}{\large\bfseries #2}\par\vspace{2mm}}
+\newcommand{\PlateCaption}[1]{\par\vspace{1mm}{\fontsize{8.5}{10.5}\selectfont #1\par
+ \vspace{1mm}\FigureNote\par}}
+
+\begin{document}
+\begin{tikzpicture}[x=1cm,y=1cm]\path[use as bounding box] (0,0) rectangle (16.6,15.8);
+\node[head] at (0.1,15.45){(a) Shared-reference covariance};\draw[wire] (0.1,15.17)--(7.699999999999999,15.17);
+\node[head] at (8.35,15.45){(b) Correlated difference errors};\draw[wire] (8.35,15.17)--(16.4,15.17);
+\node[eq] at (3.9,14.35){$\xi=(\xi_R,\xi_N,\xi_A)\trans,\quad\Cov(\xi)=\diag(v_R,v_N,v_A)$};
+\node[eq] at (3.9,13.1){$\binom{\epsilon_0}{\epsilon_1}=B\xi,\qquad B=\begin{bmatrix}-1&1&0\\-1&0&1\end{bmatrix}$};
+\node[eq] at (3.9,11.68){$V_\Delta=B\diag(v_R,v_N,v_A)B\trans$\\[5pt]$=\begin{bmatrix}v_N+v_R&v_R\\v_R&v_A+v_R\end{bmatrix}$};
+\node[tinytext,align=center] at (3.9,10.24){Fresh reference per trial; independent record errors.\\The two contrasts within a triplet are not independent.};
+\begin{axis}[mathaxis,axis equal image,at={(10.45cm,10.95cm)},anchor=south west,width=7.2cm,height=5.4cm,
+ xmin=-2,xmax=2,ymin=-2,ymax=2,xtick={-1,0,1},ytick={-1,0,1},
+ xlabel={Null error $\epsilon_0/\sqrt v$},ylabel={Injected error $\epsilon_1/\sqrt v$},clip=false]
+\addplot[domain=0:360,samples=121,line width=.9pt]
+ ({(sqrt(3)*cos(x)+sin(x))/sqrt(2)},{(sqrt(3)*cos(x)-sin(x))/sqrt(2)});
+\addplot[domain=-1.6:1.6,samples=2,dashed]{x};
+\addplot[domain=-1:1,samples=2,densely dotted]{-x};\end{axis}
+\node[tinytext,align=center] at (12.35,9.6){$v_R=v_N=v_A=v:\ V_\Delta=v\begin{bmatrix}2&1\\1&2\end{bmatrix}$; correlation $=1/2$.};
+\node[head] at (0.1,8.95){(c) Frozen null calibration: a marginal exchangeability statement};\draw[wire] (0.1,8.67)--(16.400000000000002,8.67);
+\node[eq] at (8.25,8.1){$S_i=|\widehat{\Delta h}_{i,0}|/s_{\Delta,i},\quad n_{\mathrm{cal}}=200,\quad
+k=\lceil201(1-0.05)\rceil=191,\quad q=S_{(191)}.$};
+\node[eq] at (8.25,7.36){$\Pr_{\mathrm{cal,new}}\{S_{\mathrm{new}}>S_{(191)}\}\leq\frac{201-191}{201}=\frac{10}{201}<0.05$};
+\node[head] at (0.1,6.7){(d) Gaussian reference power};\draw[wire] (0.1,6.42)--(7.699999999999999,6.42);
+\node[head] at (8.35,6.7){(e) Held-out software decision rates};\draw[wire] (8.35,6.42)--(16.4,6.42);
+\begin{axis}[mathaxis,at={(.85cm,2.6cm)},anchor=south west,width=7.15cm,height=4.0cm,
+ xmin=0,xmax=6,ymin=0,ymax=1,xtick={0,2,4,6},ytick={0,.5,.8,1},
+ xlabel={$\lambda=\delta/s_{\mathrm{record}}$},ylabel={Gaussian two-sided power},
+ legend style={at={(.5,1.03)},anchor=south,legend columns=2,/tikz/column sep=3pt}]
+\addplot[line width=.8pt,solid] coordinates {(0.000000,0.05000000) (0.100000,0.05114630) (0.200000,0.05459469) (0.300000,0.06037259) (0.400000,0.06852255) (0.500000,0.07909753) (0.600000,0.09215481) (0.700000,0.10774863) (0.800000,0.12592212) (0.900000,0.14669894) (1.000000,0.17007505) (1.100000,0.19601127) (1.200000,0.22442700) (1.300000,0.25519560) (1.400000,0.28814177) (1.500000,0.32304116) (1.600000,0.35962249) (1.700000,0.39757190) (1.800000,0.43653969) (1.900000,0.47614886) (2.000000,0.51600527) (2.100000,0.55570877) (2.200000,0.59486475) (2.300000,0.63309552) (2.400000,0.67005099) (2.500000,0.70541800) (2.600000,0.73892797) (2.700000,0.77036251) (2.800000,0.79955687) (2.900000,0.82640104) (3.000000,0.85083877) (3.100000,0.87286456) (3.200000,0.89251909) (3.300000,0.90988325) (3.400000,0.92507144) (3.500000,0.93822424) (3.600000,0.94950117) (3.700000,0.95907366) (3.800000,0.96711853) (3.900000,0.97381235) (4.000000,0.97932663) (4.100000,0.98382407) (4.200000,0.98745571) (4.300000,0.99035906) (4.400000,0.99265710) (4.500000,0.99445795) (4.600000,0.99585514) (4.700000,0.99692838) (4.800000,0.99774458) (4.900000,0.99835913) (5.000000,0.99881725) (5.100000,0.99915536) (5.200000,0.99940243) (5.300000,0.99958116) (5.400000,0.99970918) (5.500000,0.99979996) (5.600000,0.99986370) (5.700000,0.99990800) (5.800000,0.99993849) (5.900000,0.99995927) (6.000000,0.99997328)};\addlegendentry{Known baseline}
+\addplot[line width=.8pt,dashed] coordinates {(0.000000,0.05000000) (0.100000,0.05057295) (0.200000,0.05229420) (0.300000,0.05517078) (0.400000,0.05921403) (0.500000,0.06443897) (0.600000,0.07086349) (0.700000,0.07850736) (0.800000,0.08739098) (0.900000,0.09753416) (1.000000,0.10895462) (1.100000,0.12166654) (1.200000,0.13567910) (1.300000,0.15099497) (1.400000,0.16760895) (1.500000,0.18550670) (1.600000,0.20466363) (1.700000,0.22504400) (1.800000,0.24660025) (1.900000,0.26927261) (2.000000,0.29298894) (2.100000,0.31766497) (2.200000,0.34320476) (2.300000,0.36950147) (2.400000,0.39643844) (2.500000,0.42389054) (2.600000,0.45172572) (2.700000,0.47980674) (2.800000,0.50799315) (2.900000,0.53614322) (3.000000,0.56411603) (3.100000,0.59177351) (3.200000,0.61898244) (3.300000,0.64561631) (3.400000,0.67155705) (3.500000,0.69669656) (3.600000,0.72093800) (3.700000,0.74419681) (3.800000,0.76640150) (3.900000,0.78749412) (4.000000,0.80743042) (4.100000,0.82617984) (4.200000,0.84372510) (4.300000,0.86006167) (4.400000,0.87519698) (4.500000,0.88914945) (4.600000,0.90194738) (4.700000,0.91362779) (4.800000,0.92423511) (4.900000,0.93381989) (5.000000,0.94243754) (5.100000,0.95014701) (5.200000,0.95700963) (5.300000,0.96308795) (5.400000,0.96844478) (5.500000,0.97314222) (5.600000,0.97724091) (5.700000,0.98079932) (5.800000,0.98387327) (5.900000,0.98651549) (6.000000,0.98877529)};\addlegendentry{Two estimated records}
+\addplot[densely dotted,domain=0:6,samples=2,forget plot]{.8};
+\addplot[only marks,mark=o,mark size=2pt,forget plot] coordinates {(2.801582,.8)};
+\addplot[only marks,mark=*,mark size=2pt,forget plot] coordinates {(3.962034,.8)};
+\end{axis}
+\node[eq] at (3.9,1.08){$\pi(\tau)=\Phi(-z_{.975}-\tau)+1-\Phi(z_{.975}-\tau)$\\[3pt]
+$\tau=\lambda\text{ or }\lambda/\sqrt2$ for equal independent record SE.};
+\node[eq] at (12.35,5.28){$\begin{array}{c|l|c|r|r}\text{ADC}&\text{Target}&q&\text{FAR [\%]}&\text{Detect [\%]}\\\hline
+16&Voltage&2.181&2.00&100.00\\
+16&Resistance&1.901&5.50&19.25\\
+12&Voltage&2.060&4.00&100.00\\
+12&Resistance&1.843&5.00&6.75\\\end{array}$};
+\node[tinytext,align=center] at (12.35,3.7){200 calibration pairs and 400 evaluation triplets per ADC.\\Injected changes: 50 mV and 0.2 m$\Omega$.\\Table values are retained empirical results, not Gaussian power.};
+\node[tinytext,align=center] at (12.35,2.42){16-bit median difference SE: 2.474 mV / 0.180 m$\Omega$.\\The reference contribution is included. Exact scale\\and oracle junction compensation remain model assumptions.};
+\draw[wire] (.1,.55)--(16.4,.55);
+\node[tinytext] at (8.25,.18){No conditional 5\% guarantee for every calibration split; no simultaneous-target or repeated-online-alarm guarantee.};\end{tikzpicture}
+\end{document}

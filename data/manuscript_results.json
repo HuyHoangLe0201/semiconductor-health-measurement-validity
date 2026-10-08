@@ -1,0 +1,196 @@
+{
+  "seed": 20261008,
+  "scope": "Synthetic exogenous design; Gaussian current noise; no drive/HIL/bench validation.",
+  "shared_fixture": {
+    "exact_F": [
+      [
+        "21/55",
+        "-1/55"
+      ],
+      [
+        "-1/55",
+        "21/55"
+      ]
+    ],
+    "contrast_bound": 5,
+    "constant_switching_contrast_bound": 5,
+    "independent_path_dt_contrast_bound": 5.5
+  },
+  "ambiguity": {
+    "NPC_multiple_output_max_V": 0.0,
+    "NPC_single_output_max_V": 0.035355339059327376,
+    "Ttype_output_max_V": 0.035355339059327376
+  },
+  "physical_MC": [
+    {
+      "periods": 180,
+      "trials": 10000,
+      "rank": 36,
+      "truth": [
+        0.05,
+        0.0002
+      ],
+      "CRLB_SE": [
+        0.1579567290885095,
+        0.0010069954806687165
+      ],
+      "empirical_SE": [
+        0.16053287082880266,
+        0.0010159985694260555
+      ],
+      "variance_to_CRLB": [
+        1.0328843109198238,
+        1.0179610240414874
+      ],
+      "bias": [
+        0.0010249181447137626,
+        -9.684569951809609e-06
+      ],
+      "coverage": [
+        0.9465,
+        0.947
+      ],
+      "naive_white_coverage": [
+        0.9499,
+        0.9586
+      ]
+    },
+    {
+      "periods": 405,
+      "trials": 10000,
+      "rank": 36,
+      "truth": [
+        0.05,
+        0.0002
+      ],
+      "CRLB_SE": [
+        0.07761718138538139,
+        0.0004762823217372899
+      ],
+      "empirical_SE": [
+        0.07691371669797563,
+        0.0004759206335534976
+      ],
+      "variance_to_CRLB": [
+        0.9819556228850043,
+        0.9984817792535224
+      ],
+      "bias": [
+        -0.00027673552711598916,
+        -4.1854371553228356e-06
+      ],
+      "coverage": [
+        0.9531,
+        0.9505
+      ],
+      "naive_white_coverage": [
+        0.9497,
+        0.9542
+      ]
+    },
+    {
+      "periods": 810,
+      "trials": 10000,
+      "rank": 36,
+      "truth": [
+        0.05,
+        0.0002
+      ],
+      "CRLB_SE": [
+        0.044825890389447336,
+        0.0002781781648610152
+      ],
+      "empirical_SE": [
+        0.04446905519761553,
+        0.0002785356766281004
+      ],
+      "variance_to_CRLB": [
+        0.9841424274819633,
+        1.0025720315073579
+      ],
+      "bias": [
+        0.00025970413935509537,
+        -2.566997101685376e-06
+      ],
+      "coverage": [
+        0.9504,
+        0.9458
+      ],
+      "naive_white_coverage": [
+        0.9543,
+        0.9468
+      ]
+    },
+    {
+      "periods": 1620,
+      "trials": 10000,
+      "rank": 36,
+      "truth": [
+        0.05,
+        0.0002
+      ],
+      "CRLB_SE": [
+        0.03167462366105233,
+        0.00019493496400809214
+      ],
+      "empirical_SE": [
+        0.03180730279765929,
+        0.0001961377257523624
+      ],
+      "variance_to_CRLB": [
+        1.008395176037709,
+        1.0123782032694462
+      ],
+      "bias": [
+        -6.533854016883782e-05,
+        2.157201955729055e-06
+      ],
+      "coverage": [
+        0.9489,
+        0.9506
+      ],
+      "naive_white_coverage": [
+        0.9541,
+        0.9452
+      ]
+    }
+  ],
+  "nuisance_extension": {
+    "shared": {
+      "rank": 36,
+      "parameters": 50,
+      "threshold_contrast_SE_V": 0.044825890389447336
+    },
+    "phase_specific": {
+      "rank": 38,
+      "parameters": 52,
+      "threshold_contrast_SE_V": 0.045846874904692324
+    }
+  },
+  "rank_checks": [
+    {
+      "topology": "two_level",
+      "incidence_rank": 4,
+      "devices": 4,
+      "kappa": 4,
+      "joint_rank": 24,
+      "periods": 240
+    },
+    {
+      "topology": "Ttype",
+      "incidence_rank": 6,
+      "devices": 8,
+      "kappa": 4,
+      "joint_rank": 36,
+      "periods": 810
+    },
+    {
+      "topology": "NPC",
+      "incidence_rank": 6,
+      "devices": 10,
+      "kappa": 0,
+      "joint_rank": 36,
+      "periods": 810
+    }
+  ]
+}

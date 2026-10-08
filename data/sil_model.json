@@ -1,0 +1,70 @@
+{
+  "device": "IKW40N65H5",
+  "source": "http<LOCAL_PATH>",
+  "revision": "2.1 (2015-05-06)",
+  "source_pages": {
+    "static_anchors": 5,
+    "Foster_coefficients": 12
+  },
+  "transistor_R_K_W": [
+    0.08245484,
+    0.144197,
+    0.2151774,
+    0.1581708
+  ],
+  "transistor_tau_s": [
+    7.3e-05,
+    0.0007,
+    0.01235548,
+    0.08020881
+  ],
+  "diode_R_K_W": [
+    0.6701584,
+    0.775759,
+    0.3540826
+  ],
+  "diode_tau_s": [
+    0.00034,
+    0.0047,
+    0.04680901
+  ],
+  "transistor_static_anchor": {
+    "current_A": 40,
+    "T_C": [
+      25,
+      125,
+      175
+    ],
+    "voltage_V": [
+      1.65,
+      1.85,
+      1.95
+    ],
+    "gate_V": 15
+  },
+  "diode_static_anchor": {
+    "current_A": 20,
+    "T_C": [
+      25,
+      125,
+      175
+    ],
+    "voltage_V": [
+      1.45,
+      1.4,
+      1.4
+    ],
+    "gate_V": 0
+  },
+  "assumed_slopes_ohm": {
+    "transistor": 0.02,
+    "diode": 0.015
+  },
+  "electrical_rule": "Assumed affine current slopes; offsets chosen to reproduce static typical anchors; piecewise linear temperature interpolation at fixed slopes. Not a digitized full output curve or measured calibration.",
+  "boundary": "Fixed case temperature, 25 or 75 C. Foster modal temperature rises; no shared dynamic case or ambient-temperature interpretation.",
+  "losses": "Conduction only; switching energy, recovery, cross-coupling and parasitics excluded.",
+  "temperature_domain_C": [
+    25,
+    175
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "groups": 1200,
+  "primary_records": 3200,
+  "common_noise_comparators": 200,
+  "distinct_primary_noise_streams": 3200,
+  "null_calibration_disjoint": true,
+  "rates_recomputed_from_trial_records": true,
+  "native_covariance_and_trajectory_parity_verified": true,
+  "checks": [
+    {
+      "bits": 16,
+      "target": 0,
+      "counts": {
+        "nominal_coverage": 375,
+        "calibrated_alternative_coverage": 386,
+        "nominal_false_alarm": 13,
+        "calibrated_false_alarm": 8,
+        "nominal_detection": 400,
+        "calibrated_detection": 400
+      }
+    },
+    {
+      "bits": 16,
+      "target": 1,
+      "counts": {
+        "nominal_coverage": 388,
+        "calibrated_alternative_coverage": 383,
+        "nominal_false_alarm": 21,
+        "calibrated_false_alarm": 22,
+        "nominal_detection": 72,
+        "calibrated_detection": 77
+      }
+    },
+    {
+      "bits": 12,
+      "target": 0,
+      "counts": {
+        "nominal_coverage": 388,
+        "calibrated_alternative_coverage": 389,
+        "nominal_false_alarm": 22,
+        "calibrated_false_alarm": 16,
+        "nominal_detection": 400,
+        "calibrated_detection": 400
+      }
+    },
+    {
+      "bits": 12,
+      "target": 1,
+      "counts": {
+        "nominal_coverage": 379,
+        "calibrated_alternative_coverage": 375,
+        "nominal_false_alarm": 15,
+        "calibrated_false_alarm": 20,
+        "nominal_detection": 22,
+        "calibrated_detection": 27
+      }
+    }
+  ],
+  "hardware": false
+}

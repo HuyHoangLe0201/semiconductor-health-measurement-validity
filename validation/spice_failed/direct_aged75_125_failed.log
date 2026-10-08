@@ -1,0 +1,70 @@
+
+Note: No compatibility mode selected!
+
+
+Circuit: p1 generic nonlinear t-type circuit: direct_aged75_125
+
+Doing analysis at TEMP = 75.000000 and TNOM = 27.000000
+
+Using KLU as Direct Linear Solver
+
+Initial Transient Solution
+--------------------------
+
+Node                                   Voltage
+----                                   -------
+pos                                        150
+neg                                       -150
+neutral                           -2.84451e-06
+ga1                                          0
+ga2                                          1
+ga3                                          1
+ga4                                          0
+pa                                -2.85282e-06
+ma                                    0.478649
+ra                                -2.85282e-06
+ea                                -2.84451e-06
+gb1                                          0
+gb2                                          1
+gb3                                          1
+gb4                                          0
+pb                                -2.84035e-06
+mb                                    0.478649
+rb                                -2.84035e-06
+eb                                -2.84451e-06
+gc1                                          0
+gc2                                          1
+gc3                                          1
+gc4                                          0
+pc                                -2.84035e-06
+mc                                    0.478649
+rc                                -2.84035e-06
+ec                                -2.84451e-06
+bemfc#branch                       1.66318e-08
+bemfb#branch                       1.66318e-08
+bemfa#branch                      -3.32636e-08
+lc#branch                          1.66318e-08
+lb#branch                          1.66318e-08
+la#branch                         -3.32637e-08
+vgc4#branch                                  0
+vgc3#branch                             -1e-08
+vgc2#branch                             -1e-08
+vgc1#branch                                  0
+vgb4#branch                                  0
+vgb3#branch                             -1e-08
+vgb2#branch                             -1e-08
+vgb1#branch                                  0
+vga4#branch                                  0
+vga3#branch                             -1e-08
+vga2#branch                             -1e-08
+vga1#branch                                  0
+vneg#branch                        0.000453526
+vpos#branch                       -0.000448976
+
+doAnalyses: TRAN:  Timestep too small; time = 0.0314499, timestep = 1.5625e-19: trouble with node "vneg#branch"
+
+
+tran simulation(s) aborted
+
+No. of Data Rows : 506957
+ngspice-47 done

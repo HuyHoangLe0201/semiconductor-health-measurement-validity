@@ -1,0 +1,195 @@
+{
+  "scope": "Exploratory solver/model audit; no incomplete transient export is scored. Successful isolated diagnostic runs do not establish a full temperature/refinement comparison.",
+  "cases": [
+    {
+      "name": "aged75_c1_125",
+      "completed": false,
+      "scored_in_main_analysis": false,
+      "failure_time_s": 0.0314499,
+      "status": "aborted transient",
+      "netlist_sha256": "cf20c8ef5082e9d04ae9264154a3b63ed7692ee4a0d813042cce04499b84ba29",
+      "log_sha256": "a21fb4bf9ea190f70a33bda7c3bf011d1443220ee4f1c93f7517d8fadcd990ae"
+    },
+    {
+      "name": "audit_abstol125",
+      "completed": false,
+      "scored_in_main_analysis": false,
+      "failure_time_s": 0.0316509,
+      "status": "aborted transient",
+      "netlist_sha256": "a57ec4f29830e4b8a013453abf1c744fd0d7ed4fea40725a8c115f3a25833917",
+      "log_sha256": "29bfb27ee3d069675561bdb0e1c98d2a0815bb5a254687461a3cddd4c6964c54"
+    },
+    {
+      "name": "audit_be125",
+      "completed": false,
+      "scored_in_main_analysis": false,
+      "failure_time_s": null,
+      "status": "timeout/incomplete log",
+      "netlist_sha256": "613aff9e1fe143103df3b07e1ff03c916727697dff407f53878268c0ab2d1f81",
+      "log_sha256": "e2411a0c008183676e3813e6c7a6ae56318e589c6edf0e3d9964ab02ae3b59d3"
+    },
+    {
+      "name": "audit_esr125",
+      "completed": false,
+      "scored_in_main_analysis": false,
+      "failure_time_s": 0.0314499,
+      "status": "aborted transient",
+      "netlist_sha256": "ceebe5992ecb85b8677c62c19e47d9f8b7bf28041cdd803157daa1208be7dd41",
+      "log_sha256": "2de28cfdcdd1f74725d8606184b172792f0eeb0f3d01e0f5495260a3289c1289"
+    },
+    {
+      "name": "audit_nocap125",
+      "completed": true,
+      "scored_in_main_analysis": false,
+      "failure_time_s": null,
+      "status": "completed diagnostic only",
+      "netlist_sha256": "1a4a3c296810b3ceb478aeca9e67117ba8a2efc408d205375106299f0fb48f1d",
+      "log_sha256": "7cd7341c3308ad3e1e5af308a0d154faaddda1a7647eb7ebaca42cd45fa8b64d"
+    },
+    {
+      "name": "audit_shunt10M125",
+      "completed": false,
+      "scored_in_main_analysis": false,
+      "failure_time_s": 0.0314499,
+      "status": "aborted transient",
+      "netlist_sha256": "da21b94a20778d11e7a53aafb1fae03028bd98cfaea9c1981e91065b02ab0d81",
+      "log_sha256": "ec3cd0f0212bc90f3f0f91c0d96714ba497c148c849797084486ffd54551e47e"
+    },
+    {
+      "name": "audit_shunt1M125",
+      "completed": false,
+      "scored_in_main_analysis": false,
+      "failure_time_s": 0.0314499,
+      "status": "aborted transient",
+      "netlist_sha256": "07fc24ad4acedd3f9bc7601df29922fb2fe1a437eb107767837b3476b37739eb",
+      "log_sha256": "589ef8cbe005e6aa298bb400be94995b118e927ac27d031b73e637bf3384e303"
+    },
+    {
+      "name": "audit_smp125",
+      "completed": false,
+      "scored_in_main_analysis": false,
+      "failure_time_s": 0.0314499,
+      "status": "aborted transient",
+      "netlist_sha256": "a8862aaee006be27bc7e0651dc4f143abed8f165d9727be1dd3b853bd744c256",
+      "log_sha256": "05a9933c234162b834fe452993558f6e2996448faf4c19ec45c04fe0ec12dfec"
+    },
+    {
+      "name": "audit_switch125",
+      "completed": false,
+      "scored_in_main_analysis": false,
+      "failure_time_s": 9.71025e-10,
+      "status": "aborted transient",
+      "netlist_sha256": "5a4a4e7e0d199b9b3ef3e9c3096fbce02087a8f493ddb624df6257f620255f04",
+      "log_sha256": "2a454517cf68f114d2080e923a3fb7bb7ed171f78ad5177379526827d25a2e6d"
+    },
+    {
+      "name": "audit_tolA125",
+      "completed": false,
+      "scored_in_main_analysis": false,
+      "failure_time_s": 0.0447499,
+      "status": "aborted transient",
+      "netlist_sha256": "dfa938810ae0d680915436f1bf16c42c4f9e261eb0be1275fde636bea8c5d51a",
+      "log_sha256": "913597ead202c27a4f01faceaeb4624a928f3f9de6471f8700ccee952601951c"
+    },
+    {
+      "name": "audit_tolB125",
+      "completed": false,
+      "scored_in_main_analysis": false,
+      "failure_time_s": 0.0497999,
+      "status": "aborted transient",
+      "netlist_sha256": "b10327c1928c37667de01375ad2abdb84273bd5593295b4b9cbd4eef7e38d01e",
+      "log_sha256": "66257f17a99076c358dbc65fc60464556ef4a2a875a910e04bbe2bb574460204"
+    },
+    {
+      "name": "audit_trap125",
+      "completed": false,
+      "scored_in_main_analysis": false,
+      "failure_time_s": 0.00055101,
+      "status": "aborted transient",
+      "netlist_sha256": "f2e85f2a2ee6c624c601a5669830e962a516ff5cbc7679e174e8e749bd588503",
+      "log_sha256": "b8c8c84685d422cb48118606685635bc5b9b3eb4d69147a583993646c5947673"
+    },
+    {
+      "name": "direct_aged75_125",
+      "completed": false,
+      "scored_in_main_analysis": false,
+      "failure_time_s": 0.0314499,
+      "status": "aborted transient",
+      "netlist_sha256": "06037c46a5ecc66c9594e0c8fe21b3c3315813c1db8591ef2b29e7bb8d9ab6eb",
+      "log_sha256": "63e8edecd85f5a868846be23e0bf3707d8a668f1f2ffead8e5005fc0ce7c5c7c"
+    },
+    {
+      "name": "qs_aged25",
+      "completed": true,
+      "scored_in_main_analysis": false,
+      "failure_time_s": null,
+      "status": "completed diagnostic only",
+      "netlist_sha256": "99bc4d425353ff08a450046d6df01d431372e5ef8116f9835ec676d63866de15",
+      "log_sha256": "cb45e1b8a6bf50dc46aebf185a32ae3a1c7121739c55cf9168141835ccfb9423"
+    },
+    {
+      "name": "qs_aged25_125",
+      "completed": true,
+      "scored_in_main_analysis": false,
+      "failure_time_s": null,
+      "status": "completed diagnostic only",
+      "netlist_sha256": "e6837373a5d5d8e7aafeb26f9de0cacb814d653ded4c56d9482284fd49dad770",
+      "log_sha256": "6417551feb01aff27182decc076304b73fcf8ec73c82ac0a8fae7acaf7f078b8"
+    },
+    {
+      "name": "qs_aged75",
+      "completed": true,
+      "scored_in_main_analysis": false,
+      "failure_time_s": null,
+      "status": "completed diagnostic only",
+      "netlist_sha256": "861fed6acffbc86d61cf30a5f205fb5a553552df2c644dfc95267391a5fce7e9",
+      "log_sha256": "12cdce1f3071c8e4b8d674c668dcc4ced0653cada2ad708a60c438ad06708191"
+    },
+    {
+      "name": "qs_healthy25",
+      "completed": false,
+      "scored_in_main_analysis": false,
+      "failure_time_s": 0.0155071,
+      "status": "aborted transient",
+      "netlist_sha256": "245516ecb86a35415afd3068490bc7d4a04559377272a363997a7de0bc7e3b5f",
+      "log_sha256": "3457ea6ed465f34fef581c51e5194c6695db179c2ae35475939a781939f5044f"
+    },
+    {
+      "name": "qs_healthy25_125",
+      "completed": false,
+      "scored_in_main_analysis": false,
+      "failure_time_s": 0.0126142,
+      "status": "aborted transient",
+      "netlist_sha256": "c1bcaa7a35dff06dc0c45b1415d88c6c4b93e314ecbdb6f47918bd0c4427b787",
+      "log_sha256": "8efc288a98f6d33e3c888d37f1e3bc9411291fc88bd3325bdf3699dd5b86f009"
+    },
+    {
+      "name": "qs_healthy75",
+      "completed": true,
+      "scored_in_main_analysis": false,
+      "failure_time_s": null,
+      "status": "completed diagnostic only",
+      "netlist_sha256": "df7863093c9b46df11819e6d601813a20c413827c6face8545083f1d2e302d66",
+      "log_sha256": "e4b1ba42c03ed0c050240f88a534334190e6a94ed28c683ccf905bd1de3895e1"
+    },
+    {
+      "name": "qs_healthy75_125",
+      "completed": true,
+      "scored_in_main_analysis": false,
+      "failure_time_s": null,
+      "status": "completed diagnostic only",
+      "netlist_sha256": "fc07e901325a1feade47dc15a90be28615ea2fb4a1c5db00b0aaf6f4b64684b4",
+      "log_sha256": "81ccd170f115cc22ed3f1a616a830ed7ef5317c9e088ac63f13042604c1a250e"
+    },
+    {
+      "name": "smoothlinear_aged75_125",
+      "completed": false,
+      "scored_in_main_analysis": false,
+      "failure_time_s": 0.0314499,
+      "status": "aborted transient",
+      "netlist_sha256": "d5954bf0f5ff66b4a90acfff6d1cee73037362d1d3a51947ad8a08b4116e88fe",
+      "log_sha256": "4d238abf5a825ac217b7a12cdc64d8ae3bd7b0a61c1da6f0b68250eb008ac5be"
+    }
+  ],
+  "full_window_convergence_of_original_20pF_circuit_verified": false
+}

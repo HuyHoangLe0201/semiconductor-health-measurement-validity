@@ -1,0 +1,227 @@
+{
+  "status": "specification_only_no_HIL_or_bench_execution",
+  "controller_period_s": 5e-05,
+  "blanking_interval_s": 1e-06,
+  "proposed_electrical_step_s": 2.5e-07,
+  "thermal_reporting_period_s": 0.001,
+  "note": "The electrical timestep is a proposed test point, not verified device capability. Confirm platform compilation and resolve actual gate edges; refine before scoring health.",
+  "cases": [
+    {
+      "case_id": "T25_healthy_oracle_junction",
+      "evidence_status": "planned_not_executed_on_HIL",
+      "ambient_C": 25,
+      "drift": "healthy",
+      "temperature_intervention": "oracle_junction"
+    },
+    {
+      "case_id": "T25_healthy_case_proxy",
+      "evidence_status": "planned_not_executed_on_HIL",
+      "ambient_C": 25,
+      "drift": "healthy",
+      "temperature_intervention": "case_proxy"
+    },
+    {
+      "case_id": "T25_healthy_junction_offset_drift_2K",
+      "evidence_status": "planned_not_executed_on_HIL",
+      "ambient_C": 25,
+      "drift": "healthy",
+      "temperature_intervention": "junction_offset_drift_2K"
+    },
+    {
+      "case_id": "T25_healthy_junction_offset_drift_5K",
+      "evidence_status": "planned_not_executed_on_HIL",
+      "ambient_C": 25,
+      "drift": "healthy",
+      "temperature_intervention": "junction_offset_drift_5K"
+    },
+    {
+      "case_id": "T25_healthy_coefficients_10percent",
+      "evidence_status": "planned_not_executed_on_HIL",
+      "ambient_C": 25,
+      "drift": "healthy",
+      "temperature_intervention": "coefficients_10percent"
+    },
+    {
+      "case_id": "T25_healthy_temperature_lag_20ms",
+      "evidence_status": "planned_not_executed_on_HIL",
+      "ambient_C": 25,
+      "drift": "healthy",
+      "temperature_intervention": "temperature_lag_20ms"
+    },
+    {
+      "case_id": "T25_50mV_plus_0.2mohm_oracle_junction",
+      "evidence_status": "planned_not_executed_on_HIL",
+      "ambient_C": 25,
+      "drift": "50mV_plus_0.2mohm",
+      "temperature_intervention": "oracle_junction"
+    },
+    {
+      "case_id": "T25_50mV_plus_0.2mohm_case_proxy",
+      "evidence_status": "planned_not_executed_on_HIL",
+      "ambient_C": 25,
+      "drift": "50mV_plus_0.2mohm",
+      "temperature_intervention": "case_proxy"
+    },
+    {
+      "case_id": "T25_50mV_plus_0.2mohm_junction_offset_drift_2K",
+      "evidence_status": "planned_not_executed_on_HIL",
+      "ambient_C": 25,
+      "drift": "50mV_plus_0.2mohm",
+      "temperature_intervention": "junction_offset_drift_2K"
+    },
+    {
+      "case_id": "T25_50mV_plus_0.2mohm_junction_offset_drift_5K",
+      "evidence_status": "planned_not_executed_on_HIL",
+      "ambient_C": 25,
+      "drift": "50mV_plus_0.2mohm",
+      "temperature_intervention": "junction_offset_drift_5K"
+    },
+    {
+      "case_id": "T25_50mV_plus_0.2mohm_coefficients_10percent",
+      "evidence_status": "planned_not_executed_on_HIL",
+      "ambient_C": 25,
+      "drift": "50mV_plus_0.2mohm",
+      "temperature_intervention": "coefficients_10percent"
+    },
+    {
+      "case_id": "T25_50mV_plus_0.2mohm_temperature_lag_20ms",
+      "evidence_status": "planned_not_executed_on_HIL",
+      "ambient_C": 25,
+      "drift": "50mV_plus_0.2mohm",
+      "temperature_intervention": "temperature_lag_20ms"
+    },
+    {
+      "case_id": "T75_healthy_oracle_junction",
+      "evidence_status": "planned_not_executed_on_HIL",
+      "ambient_C": 75,
+      "drift": "healthy",
+      "temperature_intervention": "oracle_junction"
+    },
+    {
+      "case_id": "T75_healthy_case_proxy",
+      "evidence_status": "planned_not_executed_on_HIL",
+      "ambient_C": 75,
+      "drift": "healthy",
+      "temperature_intervention": "case_proxy"
+    },
+    {
+      "case_id": "T75_healthy_junction_offset_drift_2K",
+      "evidence_status": "planned_not_executed_on_HIL",
+      "ambient_C": 75,
+      "drift": "healthy",
+      "temperature_intervention": "junction_offset_drift_2K"
+    },
+    {
+      "case_id": "T75_healthy_junction_offset_drift_5K",
+      "evidence_status": "planned_not_executed_on_HIL",
+      "ambient_C": 75,
+      "drift": "healthy",
+      "temperature_intervention": "junction_offset_drift_5K"
+    },
+    {
+      "case_id": "T75_healthy_coefficients_10percent",
+      "evidence_status": "planned_not_executed_on_HIL",
+      "ambient_C": 75,
+      "drift": "healthy",
+      "temperature_intervention": "coefficients_10percent"
+    },
+    {
+      "case_id": "T75_healthy_temperature_lag_20ms",
+      "evidence_status": "planned_not_executed_on_HIL",
+      "ambient_C": 75,
+      "drift": "healthy",
+      "temperature_intervention": "temperature_lag_20ms"
+    },
+    {
+      "case_id": "T75_50mV_plus_0.2mohm_oracle_junction",
+      "evidence_status": "planned_not_executed_on_HIL",
+      "ambient_C": 75,
+      "drift": "50mV_plus_0.2mohm",
+      "temperature_intervention": "oracle_junction"
+    },
+    {
+      "case_id": "T75_50mV_plus_0.2mohm_case_proxy",
+      "evidence_status": "planned_not_executed_on_HIL",
+      "ambient_C": 75,
+      "drift": "50mV_plus_0.2mohm",
+      "temperature_intervention": "case_proxy"
+    },
+    {
+      "case_id": "T75_50mV_plus_0.2mohm_junction_offset_drift_2K",
+      "evidence_status": "planned_not_executed_on_HIL",
+      "ambient_C": 75,
+      "drift": "50mV_plus_0.2mohm",
+      "temperature_intervention": "junction_offset_drift_2K"
+    },
+    {
+      "case_id": "T75_50mV_plus_0.2mohm_junction_offset_drift_5K",
+      "evidence_status": "planned_not_executed_on_HIL",
+      "ambient_C": 75,
+      "drift": "50mV_plus_0.2mohm",
+      "temperature_intervention": "junction_offset_drift_5K"
+    },
+    {
+      "case_id": "T75_50mV_plus_0.2mohm_coefficients_10percent",
+      "evidence_status": "planned_not_executed_on_HIL",
+      "ambient_C": 75,
+      "drift": "50mV_plus_0.2mohm",
+      "temperature_intervention": "coefficients_10percent"
+    },
+    {
+      "case_id": "T75_50mV_plus_0.2mohm_temperature_lag_20ms",
+      "evidence_status": "planned_not_executed_on_HIL",
+      "ambient_C": 75,
+      "drift": "50mV_plus_0.2mohm",
+      "temperature_intervention": "temperature_lag_20ms"
+    },
+    {
+      "case_id": "machine_mismatch",
+      "evidence_status": "planned_not_executed_on_HIL",
+      "intervention": "1% independent L and EMF perturbations"
+    },
+    {
+      "case_id": "machine_reference",
+      "evidence_status": "planned_not_executed_on_HIL",
+      "intervention": "Independent L reference, E amplitude as nuisance"
+    },
+    {
+      "case_id": "scale_unrestricted",
+      "evidence_status": "planned_not_executed_on_HIL",
+      "intervention": "Both L and E unknown: test rank and reject unsupported targets"
+    },
+    {
+      "case_id": "npc_equivalent",
+      "evidence_status": "planned_not_executed_on_HIL",
+      "intervention": "NPC multiple-device equivalent pair with matched temperatures"
+    },
+    {
+      "case_id": "npc_single_control",
+      "evidence_status": "planned_not_executed_on_HIL",
+      "intervention": "NPC distinguishable single-device pair"
+    },
+    {
+      "case_id": "sampling_delay",
+      "evidence_status": "planned_not_executed_on_HIL",
+      "intervention": "Measured ADC/gate alignment and one-period delay"
+    },
+    {
+      "case_id": "solver_refinement",
+      "evidence_status": "planned_not_executed_on_HIL",
+      "intervention": "Halve electrical solver timestep and compare target error"
+    },
+    {
+      "case_id": "temperature_variation",
+      "evidence_status": "planned_not_executed_on_HIL",
+      "intervention": "Dynamic sink variation and separate converter/machine temperature records"
+    }
+  ],
+  "conditional_bias_budget": {
+    "voltage_V": 0.01,
+    "resistance_ohm": 5e-05
+  },
+  "required_temperature_reference": "Calibrated junction estimate with uncertainty; case temperature alone is insufficient.",
+  "source_urls": [
+    "http<LOCAL_PATH>",
+    "http<LOCAL_PATH>"
+  ]
+}

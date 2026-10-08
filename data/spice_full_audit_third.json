@@ -1,0 +1,26 @@
+[
+  {
+    "name": "audit_smp125",
+    "completed": false,
+    "changes": [
+      [
+        "set klu",
+        "unset klu"
+      ]
+    ],
+    "returncode": 0,
+    "failure_tail": "                               0\nvga4#branch                                  0\nvga3#branch                             -1e-08\nvga2#branch                             -1e-08\nvga1#branch                                  0\nvneg#branch                        0.000467652\nvpos#branch                       -0.000449758\n\ndoAnalyses: TRAN:  Timestep too small; time = 0.0314499, timestep = 1.5625e-19: trouble with node \"vneg#branch\"\n\n\ntran simulation(s) aborted\n\nNo. of Data Rows : 558358\nngspice-47 done\n"
+  },
+  {
+    "name": "audit_abstol125",
+    "completed": false,
+    "changes": [
+      [
+        "abstol=1e-9",
+        "abstol=1e-7"
+      ]
+    ],
+    "returncode": 0,
+    "failure_tail": "                               0\nvga4#branch                                  0\nvga3#branch                             -1e-08\nvga2#branch                             -1e-08\nvga1#branch                                  0\nvneg#branch                        0.000467652\nvpos#branch                       -0.000449758\n\ndoAnalyses: TRAN:  Timestep too small; time = 0.0316509, timestep = 1.5625e-19: trouble with node \"vneg#branch\"\n\n\ntran simulation(s) aborted\n\nNo. of Data Rows : 477467\nngspice-47 done\n"
+  }
+]

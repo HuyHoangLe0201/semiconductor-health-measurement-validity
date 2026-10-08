@@ -1,0 +1,174 @@
+{
+  "existing_results_SHA256": "931526bd9969a413b8758656d6c04ff00c4c7ae215de7ed0722e6dba86b2dac4",
+  "rows": [
+    {
+      "name": "clean75",
+      "estimate_SI": [
+        0.04993544297426097,
+        0.0001960351999537994
+      ],
+      "truth_SI": [
+        0.05,
+        0.0002
+      ],
+      "signed_error_SI": [
+        -6.455702573903571e-05,
+        -3.964800046200612e-06
+      ]
+    },
+    {
+      "name": "adc16",
+      "estimate_SI": [
+        0.0478628378446581,
+        0.00020770684505016617
+      ],
+      "truth_SI": [
+        0.05,
+        0.0002
+      ],
+      "signed_error_SI": [
+        -0.002137162155341904,
+        7.706845050166165e-06
+      ]
+    },
+    {
+      "name": "adc12",
+      "estimate_SI": [
+        0.04967557101799474,
+        -4.074757780582808e-05
+      ],
+      "truth_SI": [
+        0.05,
+        0.0002
+      ],
+      "signed_error_SI": [
+        -0.00032442898200526343,
+        -0.0002407475778058281
+      ]
+    },
+    {
+      "name": "skew",
+      "estimate_SI": [
+        0.12490271732450223,
+        0.002511833030434769
+      ],
+      "truth_SI": [
+        0.05,
+        0.0002
+      ],
+      "signed_error_SI": [
+        0.07490271732450222,
+        0.002311833030434769
+      ]
+    },
+    {
+      "name": "inputdelay",
+      "estimate_SI": [
+        0.03994973966042086,
+        0.00033435789049272787
+      ],
+      "truth_SI": [
+        0.05,
+        0.0002
+      ],
+      "signed_error_SI": [
+        -0.010050260339579141,
+        0.00013435789049272786
+      ]
+    },
+    {
+      "name": "actdelay",
+      "estimate_SI": [
+        -0.021928834080556903,
+        -0.0004058577618235599
+      ],
+      "truth_SI": [
+        0.05,
+        0.0002
+      ],
+      "signed_error_SI": [
+        -0.0719288340805569,
+        -0.0006058577618235599
+      ]
+    },
+    {
+      "name": "actdelay_recorded",
+      "estimate_SI": [
+        0.05022778071661445,
+        0.000202431242250878
+      ],
+      "truth_SI": [
+        0.05,
+        0.0002
+      ],
+      "signed_error_SI": [
+        0.0002277807166144452,
+        2.431242250877999e-06
+      ]
+    },
+    {
+      "name": "offset2K",
+      "estimate_SI": [
+        0.04493544297425323,
+        0.000196035199953285
+      ],
+      "truth_SI": [
+        0.05,
+        0.0002
+      ],
+      "signed_error_SI": [
+        -0.00506455702574677,
+        -3.964800046715012e-06
+      ]
+    },
+    {
+      "name": "warming_noT",
+      "estimate_SI": [
+        0.12427900674576783,
+        0.00013027243437657962
+      ],
+      "truth_SI": [
+        0.0,
+        0.0
+      ],
+      "signed_error_SI": [
+        0.12427900674576783,
+        0.00013027243437657962
+      ]
+    },
+    {
+      "name": "warming_oracle",
+      "estimate_SI": [
+        4.0466217452517e-05,
+        2.3173224836869066e-06
+      ],
+      "truth_SI": [
+        0.0,
+        0.0
+      ],
+      "signed_error_SI": [
+        4.0466217452517e-05,
+        2.3173224836869066e-06
+      ]
+    }
+  ],
+  "approximate_80_percent_power_standard_error_requirements": {
+    "voltage_mV": 17.847038768172087,
+    "resistance_mOhm": 0.07138815507268835,
+    "two_sided_alpha": 0.05,
+    "power": 0.8,
+    "scope": "Per-window Gaussian reference, positive change; approximate two-sided power inversion"
+  },
+  "thermal_relative_independent_offset_allocations_K": {
+    "voltage": 2.5,
+    "resistance": 0.3125
+  },
+  "SIL_static_anchor_threshold_gain_mV_per_K": 2.5,
+  "SIL_static_anchor_10mV_relative_offset_allocation_K": 4.0,
+  "SIL_resistance_temperature_offset_gain_scope": "Zero only because the assumed current slopes are temperature independent",
+  "ADC_LSB_A": {
+    "16bit": 0.0009765625,
+    "12bit": 0.015625
+  },
+  "scope": "Editorial summaries and conditional allocations only; no new experimental evidence"
+}

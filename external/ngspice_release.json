@@ -1,0 +1,8 @@
+{
+  "source": "http<LOCAL_PATH>",
+  "version": "ngspice-47",
+  "sha256": "59225971bd68cdd1199443649aa4615a9e6d684933f205ab49006a3942518f5a",
+  "bytes": 13814879,
+  "official_release_digest_match": true,
+  "installation": "portable workspace only; no global changes"
+}

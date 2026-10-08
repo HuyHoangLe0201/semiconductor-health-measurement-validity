@@ -1,0 +1,113 @@
+{
+  "edition": 3,
+  "pages": 10,
+  "mathematical_checks": "passed",
+  "exact_incidence_kernel_and_projector": true,
+  "complete_design_rank": 36,
+  "complete_kernel_dimension": 14,
+  "complete_kernel_max_defect_V": 5.684341886080802e-14,
+  "shared_information_inverse_and_eigenmodes": true,
+  "thermal_fibre_and_zonotope": true,
+  "estimated_baseline_covariance": true,
+  "Gaussian_power80_known": 2.801581787013579,
+  "Gaussian_power80_two_independent_records": 3.962034959292055,
+  "four_empirical_SIL_rows_match": true,
+  "exact_excitation_designs": [
+    {
+      "name": "narrow",
+      "d0": "1/26",
+      "variance_over_sigma2": "13/2"
+    },
+    {
+      "name": "wide",
+      "d0": "1/2",
+      "variance_over_sigma2": "1/2"
+    }
+  ],
+  "excitation_information_ratio": 13,
+  "likelihood_tangent_and_null_target": true,
+  "thermal_lag_settling_tau": 1.3862943611198906,
+  "bounded_bias_Gaussian_interval": true,
+  "independent_20_test_familywise_rate": 0.6415140775914581,
+  "repeated_reference_covariance": true,
+  "rendering_checks": [
+    {
+      "page": 1,
+      "text_within_bounds": true,
+      "vector_only": true,
+      "monochrome": true
+    },
+    {
+      "page": 2,
+      "text_within_bounds": true,
+      "vector_only": true,
+      "monochrome": true
+    },
+    {
+      "page": 3,
+      "text_within_bounds": true,
+      "vector_only": true,
+      "monochrome": true
+    },
+    {
+      "page": 4,
+      "text_within_bounds": true,
+      "vector_only": true,
+      "monochrome": true
+    },
+    {
+      "page": 5,
+      "text_within_bounds": true,
+      "vector_only": true,
+      "monochrome": true
+    },
+    {
+      "page": 6,
+      "text_within_bounds": true,
+      "vector_only": true,
+      "monochrome": true
+    },
+    {
+      "page": 7,
+      "text_within_bounds": true,
+      "vector_only": true,
+      "monochrome": true
+    },
+    {
+      "page": 8,
+      "text_within_bounds": true,
+      "vector_only": true,
+      "monochrome": true
+    },
+    {
+      "page": 9,
+      "text_within_bounds": true,
+      "vector_only": true,
+      "monochrome": true
+    },
+    {
+      "page": 10,
+      "text_within_bounds": true,
+      "vector_only": true,
+      "monochrome": true
+    }
+  ],
+  "LaTeX_warnings": [],
+  "PDF_SHA256": "d3c7d3ecd08cb5985d2d0f4fa31aa2dc986313369c1ee1b82ceca28207eeb83f",
+  "visual_review_completed": true,
+  "hardware": false,
+  "compilation": "TeX Live 2026; native compiler unavailable",
+  "visually_reviewed_pages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "visual_review_notes": "Final Poppler render inspected on all ten pages; panel labels, axes, equations, tube continuation, clipped tangent plots and bias-interval line styles checked."
+}

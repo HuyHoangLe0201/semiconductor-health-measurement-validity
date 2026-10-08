@@ -1,0 +1,29 @@
+{
+  "heterogeneous_fixture": {
+    "F": [
+      [
+        "21/55",
+        "1/55"
+      ],
+      [
+        "1/55",
+        "21/55"
+      ]
+    ],
+    "penalty_direction": [
+      "1/2",
+      "-1/2"
+    ],
+    "contrast_bound": "11/2",
+    "sum_bound": "5",
+    "known_dt_contrast_bound": "5"
+  },
+  "machine_scale_fixture": {
+    "rank": 37,
+    "parameters": 52,
+    "tangent_residual_max_V": 1.1368683772161603e-13,
+    "threshold_contrast_tangent_V": -299.75,
+    "resistance_contrast_tangent_ohm": 0.0001999999999999988,
+    "scope": "Equivalent affine observation model with ideal current derivatives, not switching-event plant."
+  }
+}

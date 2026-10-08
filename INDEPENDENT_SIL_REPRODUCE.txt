@@ -1,0 +1,58 @@
+Independent-record SIL evidence - 8 October 2026
+
+Prerequisites: Windows x64, MSVC 2019 BuildTools (or configured VsRoot), Python
+with NumPy, SciPy and Matplotlib, and the original separating_fixture.npz and
+sil_basis.h. Build the original SIL DLL first if it is not already present.
+The native harness includes sil_core.c and links the unchanged sil_plant.c.
+
+From the repository root:
+  powershell -File scripts/build_sil_reporting.ps1
+  python scripts/sil_independent_mc.py --parity
+  python scripts/sil_independent_mc.py --calibration 200 --evaluation 400 --workers 4
+  python scripts/check_independent_sil.py
+  python scripts/report_independent_sil.py
+
+Set OPENBLAS_NUM_THREADS=1 and OMP_NUM_THREADS=1. The harness also sets these
+defaults before importing numerical libraries. The Monte Carlo is a substantial
+offline computation and has no online deadline claim.
+
+Restart semantics:
+The default Monte Carlo appends complete trial lines to
+data/independent_sil/trials.jsonl and skips existing trial identifiers when
+restarted. Do not mix different periods, partitions, binaries or source versions
+in this file. For an independent fresh rerun, preserve the existing directory
+and result JSON, then use a fresh output directory by updating OUT deliberately.
+The published run uses exactly 4096 periods, 200 calibration pairs and 400
+evaluation triplets per setting. Parity checks must pass before the full run.
+
+Data:
+Primary noise streams are disjoint across reference, null and injected records.
+An additional common-noise injected comparator is expressly identified.
+Every trial retains seeds, estimates, covariance, status and noise/gate/current
+hashes. Representative calibration/evaluation and parity NPZs retain all arrays.
+Other raw traces can be regenerated deterministically from the seeded sources.
+No primary record is excluded silently. The audit recomputes every reported rate
+from trial records and verifies all source and binary hashes.
+
+Statistics:
+The nominal weight includes 2 mA noise plus the reference LSB^2/12 approximation.
+The independent baseline/test covariance is the sum of record covariances.
+The 191st score among 200 absolute standardized null contrasts defines a frozen,
+per-target 5% marginal exchangeable-null rank threshold. It is not an exact
+Gaussian feedback likelihood, a joint multi-target guarantee or a physical
+calibration. Injected-target interval coverage is measured, not guaranteed by
+the null calibration. Null and injected comparisons inside one evaluation
+triplet share a reference and are not pooled as independent observations.
+Exact binomial intervals concern independent trials within each reported rate.
+
+Scope:
+All records are compiled closed-loop software execution. Machine scale is
+supplied exactly and junction compensation is oracle truth. No physical ADC,
+converter, HIL platform, measured thermal calibration, natural-aging threshold
+or real-time target qualification is added. Original ngspice refinement failures
+remain unresolved and separate from the native plant's integration checks.
+
+This repository distributes the reproducibility inputs and numerical evidence.
+The manuscript build.ps1 and manuscript editorial files are not included.
+Audits and reporting scripts may update generated outputs; to verify the
+release checksums, run verify_upload_bundle.py before these scripts.

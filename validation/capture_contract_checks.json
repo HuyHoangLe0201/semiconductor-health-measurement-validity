@@ -1,0 +1,10 @@
+{
+  "offline_round_trip_matches_computed_oracle": true,
+  "offline_data_cannot_be_relabeled_as_HIL": true,
+  "digest_mismatch_rejected": true,
+  "case_proxy_cannot_be_promoted_to_junction": true,
+  "missing_machine_scale_reference_rejected": true,
+  "unadapted_sensor_covariance_rejected": true,
+  "synthetic_missed_deadline_rejected": true,
+  "missing_frame_with_valid_digest_rejected": true
+}

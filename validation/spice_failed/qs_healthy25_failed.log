@@ -1,0 +1,94 @@
+
+Note: No compatibility mode selected!
+
+
+Circuit: p1 generic nonlinear t-type circuit: qs_healthy25
+
+Doing analysis at TEMP = 25.000000 and TNOM = 27.000000
+
+Using KLU as Direct Linear Solver
+
+Initial Transient Solution
+--------------------------
+
+Node                                   Voltage
+----                                   -------
+pos                                        150
+neg                                       -150
+neutral                            -0.00917887
+ga1                                          0
+ga2                                          1
+ga3                                          1
+ga4                                          0
+ya1                                    0.65979
+xa1                                   0.659788
+pa                                 -0.00917887
+ya2                               -1.71845e-20
+xa2                               -3.43691e-20
+ma                                -1.67066e-06
+ya3                                -0.00917887
+xa3                                -0.00917887
+ya4                                    -149.33
+xa4                                    -149.33
+ra                                 -0.00917887
+ea                                 -0.00917887
+gb1                                          0
+gb2                                          1
+gb3                                          1
+gb4                                          0
+yb1                                    0.65979
+xb1                                   0.659788
+pb                                 -0.00917887
+yb2                               -1.71845e-20
+xb2                               -3.43691e-20
+mb                                -1.67066e-06
+yb3                                -0.00917887
+xb3                                -0.00917887
+yb4                                    -149.33
+xb4                                    -149.33
+rb                                 -0.00917887
+eb                                 -0.00917887
+gc1                                          0
+gc2                                          1
+gc3                                          1
+gc4                                          0
+yc1                                    0.65979
+xc1                                   0.659788
+pc                                 -0.00917887
+yc2                               -1.71845e-20
+xc2                               -3.43691e-20
+mc                                -1.67066e-06
+yc3                                -0.00917887
+xc3                                -0.00917887
+yc4                                    -149.33
+xc4                                    -149.33
+rc                                 -0.00917887
+ec                                 -0.00917887
+bemfc#branch                      -3.36647e-11
+bemfb#branch                      -3.36515e-11
+bemfa#branch                      -3.36515e-11
+lc#branch                         -2.17242e-10
+lb#branch                         -2.17229e-10
+la#branch                         -2.17229e-10
+vgc4#branch                                  0
+vgc3#branch                             -1e-08
+vgc2#branch                             -1e-08
+vgc1#branch                                  0
+vgb4#branch                                  0
+vgb3#branch                             -1e-08
+vgb2#branch                             -1e-08
+vgb1#branch                                  0
+vga4#branch                                  0
+vga3#branch                             -1e-08
+vga2#branch                             -1e-08
+vga1#branch                                  0
+vneg#branch                        0.000467403
+vpos#branch                       -0.000449521
+
+doAnalyses: TRAN:  Timestep too small; time = 0.0155071, timestep = 3.125e-19: trouble with node "vpos#branch"
+
+
+tran simulation(s) aborted
+
+No. of Data Rows : 67556
+ngspice-47 done

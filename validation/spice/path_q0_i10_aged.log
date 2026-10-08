@@ -1,0 +1,21 @@
+
+Note: No compatibility mode selected!
+
+
+Circuit: path_q0_i10_aged
+
+Doing analysis at TEMP = 25.000000 and TNOM = 27.000000
+
+Using SPARSE 1.3 as Direct Linear Solver
+
+No. of Data Rows : 1
+v(p) = -2.29060285696842e+00
+@ds1[id] = 1.516355883182735e-04
+@da1[id] = -1.52364099241164e-10
+@ds2[id] = 9.999995249294479e+00
+@da2[id] = -1.37795633971736e-12
+@ds3[id] = -9.86877091604877e-13
+@da3[id] = 9.999995289928622e+00
+@ds4[id] = 1.515199758780372e-04
+@da4[id] = -1.47782893505071e-10
+ngspice-47 done

@@ -1,0 +1,197 @@
+{
+  "evidence_kind": "offline_external_circuit_simulation",
+  "hardware_validation_performed": false,
+  "simulator_version": "******\n** ngspice-47 : Circuit level simulation program\n** Compiled with KLU Direct Linear Solver\n** The U. C. Berkeley CAD Group\n** Copyright 1985-1994, Regents of the University of California.\n** Copyright 2001-2026, The ngspice team.\n** Please get your ngspice manual from http<LOCAL_PATH>\n** Please file your bug-reports at http<LOCAL_PATH>\n** Creation Date: Aug 11 2026   13:55:25\n******\n",
+  "periods": 1024,
+  "cases": [
+    {
+      "name": "healthy25",
+      "temperature_C": 25,
+      "aged": false,
+      "max_step_s": 2.5e-07,
+      "estimate_V_ohm": [
+        -0.1220664548589561,
+        0.002036858770503712
+      ],
+      "rank": 36,
+      "target_defect": [
+        3.903821710338207e-14,
+        1.63202784619898e-14
+      ],
+      "retained": 939,
+      "neutral_current_sum_max_A": 1.0804797256014353e-05,
+      "netlist_sha256": "1289f346ada26dbaf67fd21d4221bc61c2cd3591539921d611632309e88b3b0a",
+      "log": "healthy25.log",
+      "log_warning_lines": []
+    },
+    {
+      "name": "aged25",
+      "temperature_C": 25,
+      "aged": true,
+      "max_step_s": 2.5e-07,
+      "estimate_V_ohm": [
+        -0.07214638714926885,
+        0.0022543093919827582
+      ],
+      "rank": 36,
+      "target_defect": [
+        3.090860900556436e-13,
+        1.0880185641326534e-14
+      ],
+      "retained": 940,
+      "neutral_current_sum_max_A": 1.080601475855758e-05,
+      "netlist_sha256": "96946f3fb55296123081a092fba4bfe112efcbca1c72bff63d5eeb6d5748481e",
+      "log": "aged25.log",
+      "log_warning_lines": []
+    },
+    {
+      "name": "healthy75",
+      "temperature_C": 75,
+      "aged": false,
+      "max_step_s": 2.5e-07,
+      "estimate_V_ohm": [
+        -0.11301037137967385,
+        0.0019602229622918046
+      ],
+      "rank": 36,
+      "target_defect": [
+        5.057065877167588e-14,
+        5.717648576819556e-15
+      ],
+      "retained": 942,
+      "neutral_current_sum_max_A": 1.0793720488067038e-05,
+      "netlist_sha256": "1562eb959c4db6182cb0e9545f86d8de9ec01a2f9c64b761568036bde1c244c1",
+      "log": "healthy75.log",
+      "log_warning_lines": []
+    },
+    {
+      "name": "aged75",
+      "temperature_C": 75,
+      "aged": true,
+      "max_step_s": 2.5e-07,
+      "estimate_V_ohm": [
+        -0.06326593484815224,
+        0.0021679095219859813
+      ],
+      "rank": 36,
+      "target_defect": [
+        4.3076653355456074e-14,
+        1.4641066137244252e-15
+      ],
+      "retained": 942,
+      "neutral_current_sum_max_A": 1.0722851467193095e-05,
+      "netlist_sha256": "c028d7c99fef2680a0c88c14b1dca33ce1ea0ed6dcd5ef091f148c6a02718b58",
+      "log": "aged75.log",
+      "log_warning_lines": []
+    }
+  ],
+  "contrasts": {
+    "aged25_vs_healthy25": [
+      0.04992006770968725,
+      0.00021745062147904629
+    ],
+    "healthy75_vs_healthy25": [
+      0.00905608347928226,
+      -7.663580821190737e-05
+    ],
+    "aged75_vs_healthy75": [
+      0.04974443653152161,
+      0.00020768655969417675
+    ]
+  },
+  "refinement": {
+    "periods": 512,
+    "duration_s": 0.0256,
+    "cases": [
+      {
+        "name": "aged75_prefix250",
+        "temperature_C": 75,
+        "aged": true,
+        "max_step_s": 2.5e-07,
+        "estimate_V_ohm": [
+          0.008209372960441302,
+          -0.0004309942151198322
+        ],
+        "rank": 36,
+        "target_defect": [
+          1.7053025658242404e-13,
+          7.827072323607354e-15
+        ],
+        "retained": 470,
+        "neutral_current_sum_max_A": 1.0722851467193095e-05,
+        "netlist_sha256": "75fb0977c0ae014e67198334bdd6378ed1cf73a0145ae0f24e5b32c60fb5d6f4",
+        "log": "aged75_prefix250.log",
+        "log_warning_lines": []
+      },
+      {
+        "name": "aged75_prefix125",
+        "temperature_C": 75,
+        "aged": true,
+        "max_step_s": 1.25e-07,
+        "estimate_V_ohm": [
+          0.008210400976098542,
+          -0.00043096800635606877
+        ],
+        "rank": 36,
+        "target_defect": [
+          8.926193117986259e-14,
+          7.105427357601002e-15
+        ],
+        "retained": 470,
+        "neutral_current_sum_max_A": 1.080149683474474e-05,
+        "netlist_sha256": "7f54d3c76c30fdb524b92ea6b24783adbb92b6162d216a97593f49bca076e3f4",
+        "log": "aged75_prefix125.log",
+        "log_warning_lines": []
+      }
+    ],
+    "max_current_difference_A": 1.1688723802194545e-06,
+    "target_difference_V_ohm": [
+      1.0280156572395338e-06,
+      2.6208763763413412e-08
+    ],
+    "scope": "Prefix only; full-window refinement failed at 31.4499 ms for both 125 ns and 100 ns.",
+    "full_window_failed_max_steps_ns": [
+      125,
+      100
+    ]
+  },
+  "limitations": "Generic nonlinear conduction surrogate; gate replay, no closed-loop external controller; no calibrated IGBT, switching parasitics or dynamic thermal network.",
+  "dc_path_validation": [
+    {
+      "q": 1,
+      "current_A": 10.0,
+      "delta_pole_V": -0.05200010128041299,
+      "expected_V": -0.052
+    },
+    {
+      "q": 1,
+      "current_A": -10.0,
+      "delta_pole_V": 0.0,
+      "expected_V": 0.0
+    },
+    {
+      "q": 0,
+      "current_A": 10.0,
+      "delta_pole_V": -1.8902399645526202e-09,
+      "expected_V": 0.0
+    },
+    {
+      "q": 0,
+      "current_A": -10.0,
+      "delta_pole_V": -4.415323218154299e-09,
+      "expected_V": 0.0
+    },
+    {
+      "q": -1,
+      "current_A": 10.0,
+      "delta_pole_V": 2.5516015966786654e-08,
+      "expected_V": 0.0
+    },
+    {
+      "q": -1,
+      "current_A": -10.0,
+      "delta_pole_V": 5.3702990499004954e-08,
+      "expected_V": 0.0
+    }
+  ]
+}

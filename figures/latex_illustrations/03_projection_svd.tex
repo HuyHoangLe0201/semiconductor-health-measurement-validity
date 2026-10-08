@@ -1,0 +1,71 @@
+\documentclass[10pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,booktabs,array,graphicx,tikz,pgfplots}
+\usepackage[paperwidth=190mm,paperheight=224mm,margin=10mm]{geometry}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{pdfauthor={},pdftitle={Monochrome mathematical illustrations: semiconductor-health identifiability}}
+\usetikzlibrary{arrows.meta,positioning,calc,patterns}
+\pgfplotsset{compat=1.18}
+\newcommand{\trans}{^{\mathsf T}}\newcommand{\R}{\mathbb R}
+\newcommand{\one}{\mathbf 1}\newcommand{\zero}{\mathbf 0}
+\DeclareMathOperator{\rank}{rank}\DeclareMathOperator{\range}{range}
+\DeclareMathOperator{\diag}{diag}\DeclareMathOperator{\Cov}{Cov}
+\DeclareMathOperator{\Var}{Var}\DeclareMathOperator{\spanop}{span}
+\newcommand{\FigureNote}{Visualization code prepared with assistance from OpenAI Codex.}
+\pagestyle{empty}\setlength{\parindent}{0pt}
+\tikzset{
+ every picture/.style={font=\fontsize{9}{11}\selectfont,>=Latex},
+ every node/.style={font=\fontsize{9}{11}\selectfont,inner sep=2pt},
+ head/.style={font=\fontsize{9.5}{12}\selectfont\bfseries,anchor=west},
+ tinytext/.style={font=\fontsize{8}{10}\selectfont},eq/.style={align=center},
+ wire/.style={draw=black,line width=.5pt},arr/.style={->,black,line width=.65pt},
+ device/.style={draw,fill=white,minimum width=1.1cm,minimum height=.38cm}}
+\pgfplotsset{mathaxis/.style={axis lines=left,axis line style={black,line width=.5pt},
+ tick style={black},tick label style={font=\fontsize{8}{10}\selectfont},
+ label style={font=\fontsize{8.5}{10}\selectfont},grid=major,
+ major grid style={black!15,line width=.2pt},
+ legend style={font=\fontsize{8}{10}\selectfont,draw=none,fill=white},
+ every axis plot/.append style={black}}}
+\newcommand{\PlateTitle}[2]{\small\textbf{Mathematical plate #1}\hfill Monochrome TikZ / PGFPlots\par
+ \vspace{1.5mm}{\large\bfseries #2}\par\vspace{2mm}}
+\newcommand{\PlateCaption}[1]{\par\vspace{1mm}{\fontsize{8.5}{10.5}\selectfont #1\par
+ \vspace{1mm}\FigureNote\par}}
+
+\begin{document}
+\begin{tikzpicture}[x=1cm,y=1cm]\path[use as bounding box] (0,0) rectangle (16.6,15.8);
+\node[head] at (0.1,15.45){(a) Whiten and remove nuisance};\draw[wire] (0.1,15.17)--(7.699999999999999,15.17);
+\node[head] at (8.35,15.45){(b) Identifiable and null SVD coordinates};\draw[wire] (8.35,15.17)--(16.4,15.17);
+\draw[arr] (.9,11.3)--(7.15,11.3) node[above left] {$\range(WH)$};
+\draw[arr] (1.15,11.3)--(5.05,14.1) node[above] {$WZt$};
+\draw[dashed,wire] (5.05,11.3)--(5.05,14.1);
+\draw[arr] (1.15,11.3)--(5.05,11.3);
+\draw[arr,line width=.9pt] (5.05,11.3)--(5.05,14.1) node[midway,right] {$MWZt$};
+\draw[wire] (4.85,11.3)--(4.85,11.5)--(5.05,11.5);
+\node[eq] at (3.9,10.2){$\Pi_{WH}=WH(WH)^+,\quad M=I-\Pi_{WH}$\\[4pt]$M=M\trans=M^2,\quad MWH=0$};
+\node[eq] at (12.35,14.45){$Z_{\mathrm{eff}}=MWZ=U_rD_rV_r\trans$\\[5pt]$D_r=\diag(\sigma_1,\ldots,\sigma_r),\quad\sigma_j>0$};
+\node[eq] at (12.35,13.1){$\theta=V_ra+V_0b,\quad Z_{\mathrm{eff}}V_0=0$\\[5pt]
+$\bar y=U_r\trans MW\widetilde y=D_ra+\varepsilon_r$\\[4pt]$\varepsilon_r\sim\mathcal N(0,I_r)$};
+\node[eq] at (12.35,11.36){$F_\theta=V_rD_r^2V_r\trans$\\[5pt]$F_\theta^+=V_rD_r^{-2}V_r\trans$};
+\node[tinytext,align=center] at (12.35,10.15){White noise has identity covariance on the retained $U_r$\\coordinates, not on the full projected ambient space.};
+\node[head] at (0.1,9.35){(c) Estimability precedes precision};\draw[wire] (0.1,9.07)--(7.699999999999999,9.07);
+\node[head] at (8.35,9.35){(d) Small singular value, large variance};\draw[wire] (8.35,9.07)--(16.4,9.07);
+\node[eq] at (3.9,8.3){$l=V_r\ell_r+V_0\ell_0$\\[5pt]$l\in\range(F_\theta)\ \Longleftrightarrow\ \ell_0=0$};
+\node[eq] at (3.9,6.86){$\widehat h=\ell_r\trans D_r^{-1}\bar y$\\[6pt]$\Var(\widehat h)=\sum_{j=1}^{r}\ell_{r,j}^2/\sigma_j^2$};
+\node[eq] at (3.9,5.36){$Z_{\mathrm{eff}}=\diag(1,\epsilon,0),\quad\epsilon=0.2$\\[5pt]$F_\theta=\diag(1,0.04,0)$};
+\node[eq] at (3.9,3.61){$\begin{array}{c|c|c}l&\text{Estimable?}&\text{Variance}\\\hline
+e_1&\text{yes}&1\\e_2&\text{yes}&25\\e_3&\text{no}&\text{undefined}\end{array}$};
+\node[tinytext,align=center] at (3.9,2.27){Yet $e_3\trans F_\theta^+e_3=0$.\\That finite number is not an uncertainty bound.};
+\begin{axis}[mathaxis,axis equal image,at={(9.1cm,3.1cm)},anchor=south west,width=7.1cm,height=6.5cm,
+ xmin=-6,xmax=6,ymin=-6,ymax=6,xtick={-5,0,5},ytick={-5,0,5},
+ xlabel={Identifiable error $a_1$},ylabel={Identifiable error $a_2$},clip=false]
+\addplot[domain=0:360,samples=121,line width=.85pt] ({cos(x)},{5*sin(x)});
+\addplot[only marks,mark=*,mark size=1.6pt] coordinates {(1,0)(0,5)};
+\node[anchor=west,tinytext] at (axis cs:.4,4.6){$s_{e_2}=5$};
+\node[anchor=south west,tinytext] at (axis cs:1.1,.5){$s_{e_1}=1$};
+\node[anchor=west,tinytext] at (axis cs:1.5,-3.4){$a_1^2+a_2^2/25=1$};\end{axis}
+\node[tinytext,align=center] at (12.35,1.85){Unit Mahalanobis contour; equal axis scales.\\The null coordinate $b$ is absent from the observable ellipse.};
+\draw[wire] (.1,1.15)--(16.4,1.15);
+\node[eq] at (8.25,.57){$\operatorname{bias}(\widehat h)=\ell_r\trans D_r^{-1}U_r\trans Mb_w,\quad
+\|Mb_w\|_2\leq E\ \Rightarrow\ |\operatorname{bias}(\widehat h)|\leq E\sqrt{l\trans F_\theta^+l}.$};
+\end{tikzpicture}
+\end{document}

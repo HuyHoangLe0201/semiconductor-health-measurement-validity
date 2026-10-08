@@ -1,0 +1,79 @@
+\documentclass[10pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,booktabs,array,graphicx,tikz,pgfplots}
+\usepackage[paperwidth=190mm,paperheight=224mm,margin=10mm]{geometry}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{pdfauthor={},pdftitle={Monochrome mathematical illustrations: semiconductor-health identifiability}}
+\usetikzlibrary{arrows.meta,positioning,calc,patterns}
+\pgfplotsset{compat=1.18}
+\newcommand{\trans}{^{\mathsf T}}\newcommand{\R}{\mathbb R}
+\newcommand{\one}{\mathbf 1}\newcommand{\zero}{\mathbf 0}
+\DeclareMathOperator{\rank}{rank}\DeclareMathOperator{\range}{range}
+\DeclareMathOperator{\diag}{diag}\DeclareMathOperator{\Cov}{Cov}
+\DeclareMathOperator{\Var}{Var}\DeclareMathOperator{\spanop}{span}
+\newcommand{\FigureNote}{Visualization code prepared with assistance from OpenAI Codex.}
+\pagestyle{empty}\setlength{\parindent}{0pt}
+\tikzset{
+ every picture/.style={font=\fontsize{9}{11}\selectfont,>=Latex},
+ every node/.style={font=\fontsize{9}{11}\selectfont,inner sep=2pt},
+ head/.style={font=\fontsize{9.5}{12}\selectfont\bfseries,anchor=west},
+ tinytext/.style={font=\fontsize{8}{10}\selectfont},eq/.style={align=center},
+ wire/.style={draw=black,line width=.5pt},arr/.style={->,black,line width=.65pt},
+ device/.style={draw,fill=white,minimum width=1.1cm,minimum height=.38cm}}
+\pgfplotsset{mathaxis/.style={axis lines=left,axis line style={black,line width=.5pt},
+ tick style={black},tick label style={font=\fontsize{8}{10}\selectfont},
+ label style={font=\fontsize{8.5}{10}\selectfont},grid=major,
+ major grid style={black!15,line width=.2pt},
+ legend style={font=\fontsize{8}{10}\selectfont,draw=none,fill=white},
+ every axis plot/.append style={black}}}
+\newcommand{\PlateTitle}[2]{\small\textbf{Mathematical plate #1}\hfill Monochrome TikZ / PGFPlots\par
+ \vspace{1.5mm}{\large\bfseries #2}\par\vspace{2mm}}
+\newcommand{\PlateCaption}[1]{\par\vspace{1mm}{\fontsize{8.5}{10.5}\selectfont #1\par
+ \vspace{1mm}\FigureNote\par}}
+
+\begin{document}
+\begin{tikzpicture}[x=1cm,y=1cm]\path[use as bounding box] (0,0) rectangle (16.6,15.8);
+\node[head] at (0.1,15.45){(a) Temperature truth and a lagged record};\draw[wire] (0.1,15.17)--(7.699999999999999,15.17);
+\node[head] at (8.35,15.45){(b) The corrected signal can imitate health drift};\draw[wire] (8.35,15.17)--(16.4,15.17);
+\begin{axis}[mathaxis,at={(.85cm,10.55cm)},anchor=south west,width=7.15cm,height=4.55cm,
+ xmin=-.5,xmax=4,ymin=-.5,ymax=9,xtick={0,1,2,3,4},ytick={0,4,8},xlabel={$t/\tau$},ylabel={Temperature rise [K]},
+ legend style={at={(.97,.06)},anchor=south east}]
+\addplot[line width=.85pt] coordinates {(-.5,0)(0,0)(0,8)(4,8)};\addlegendentry{Junction truth}
+\addplot[dashed,domain=0:4,samples=100,line width=.85pt]{8*(1-exp(-x))};\addlegendentry{Recorded indication}
+\draw[<->] (axis cs:1,5.056964)--(axis cs:1,8) node[midway,left,tinytext] {$-e(t)$};\end{axis}
+\node[eq] at (3.9,9.45){$\tau\dot T^{\mathrm{record}}+T^{\mathrm{record}}=T^{\mathrm{true}}$};
+\begin{axis}[mathaxis,at={(9.05cm,10.55cm)},anchor=south west,width=7.15cm,height=4.55cm,
+ xmin=0,xmax=4,ymin=0,ymax=27,xtick={0,1,2,3,4},ytick={0,5,10,20,25},xlabel={$t/\tau$},ylabel={Corrected change [mV]},
+ legend style={at={(.97,.97)},anchor=north east}]
+\addplot[domain=0:4,samples=100,line width=.85pt]{20*exp(-x)};\addlegendentry{Zero health change}
+\addplot[domain=0:4,samples=100,dashed,line width=.85pt]{5+20*exp(-x)};\addlegendentry{5 mV health change}
+\addplot[domain=0:4,samples=2,densely dotted,forget plot]{5};
+\draw[densely dotted] (axis cs:1.386294,0)--(axis cs:1.386294,5);
+\addplot[only marks,mark=o,mark size=2.2pt,forget plot] coordinates {(1.386294,5)};\end{axis}
+\node[tinytext,align=center] at (12.35,9.45){Analytic step: $\Delta T=8$ K, $\alpha=2.5$ mV/K.};
+\node[head] at (0.1,9.0){(c) Derive the sign and the settling budget};\draw[wire] (0.1,8.72)--(7.699999999999999,8.72);
+\node[head] at (8.35,9.0){(d) Visual error budget for an estimable target};\draw[wire] (8.35,8.72)--(16.4,8.72);
+\node[eq] at (3.9,8.1){$e(t)=T^{\mathrm{record}}-T^{\mathrm{true}}=-\Delta T e^{-t/\tau}$};
+\node[eq] at (3.9,6.97){$\widehat{\Delta h}(t)=\Delta h-\alpha[e(t)-e_b]$\\[5pt]
+$e_b=0\Rightarrow\widehat{\Delta h}(t)=\Delta h+20e^{-t/\tau}\ \mathrm{mV}$};
+\node[eq] at (3.9,5.42){$|\alpha\Delta T|e^{-t/\tau}\leq B_T$\\[5pt]
+$t\geq\tau\max\{0,\log(|\alpha\Delta T|/B_T)\}$};
+\node[eq] at (3.9,4.26){$B_T=5\ \mathrm{mV}\Rightarrow t\geq\tau\log4\simeq1.386\tau$};
+\node[tinytext,align=center] at (3.9,2.86){The threshold controls this thermal residual only.\\It does not by itself control random false alarms.\\The step and first-order lag are illustrative;\\a real lag bound needs sensor or device evidence.};
+\draw[arr] (8.8,5.55)--(16.0,5.55) node[below] {$\Delta h$};
+\draw[densely dotted,wire] (12.4,5.55)--(12.4,6.0);
+\draw[line width=1.2pt] (10.6,6.0)--(14.2,6.0);
+\draw[wire] (10.6,5.83)--(10.6,6.17);\draw[wire] (14.2,5.83)--(14.2,6.17);
+\fill (12.4,6) circle(2pt);\node[above] at (12.4,6.18){$\widehat{\Delta h}$};
+\draw[<->] (10.6,6.85)--(14.2,6.85) node[midway,above] {$2zs_\Delta$};
+\draw[dashed,line width=.8pt] (9.6,6)--(10.6,6);\draw[dashed,line width=.8pt] (14.2,6)--(15.2,6);
+\draw[wire] (9.6,5.7)--(9.6,6.3);\draw[wire] (15.2,5.7)--(15.2,6.3);
+\draw[<->] (14.2,5.2)--(15.2,5.2) node[midway,below] {$B_T$};
+\node[eq] at (12.35,8.06){$\widehat{\Delta h}=\Delta h+b_T+s_\Delta Z,\quad Z\sim\mathcal N(0,1)$};
+\node[eq] at (12.35,4.01){$|b_T|\leq B_T,\quad z=\Phi^{-1}(1-\alpha_0/2)$\\[5pt]
+$\mathcal I=[\widehat{\Delta h}-(zs_\Delta+B_T),\ \widehat{\Delta h}+(zs_\Delta+B_T)]$};
+\node[tinytext,align=center] at (12.35,2.72){For known $s_\Delta$ and a valid deterministic bias bound,\\$\Pr(\Delta h\in\mathcal I)\geq1-\alpha_0$.\\Solid: Gaussian radius; dashed: bounded-bias extension.};
+\draw[wire] (.1,1.35)--(16.4,1.35);
+\node[tinytext,align=center] at (8.25,.72){Temperature correction $\longrightarrow$ residual lag $\longrightarrow$ target bias $\longrightarrow$ uncertainty allocation.\\Averaging windows and time-varying temperature require the complete estimator's weighted discrepancy operator.};
+\end{tikzpicture}
+\end{document}

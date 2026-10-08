@@ -1,0 +1,14 @@
+[
+  {
+    "bits": 16,
+    "max_state_difference": 2.842170943040401e-14,
+    "rank": 36,
+    "covariance_max_difference": 8.60161957936742e-19
+  },
+  {
+    "bits": 12,
+    "max_state_difference": 2.842170943040401e-14,
+    "rank": 36,
+    "covariance_max_difference": 3.093364323372705e-18
+  }
+]

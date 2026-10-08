@@ -1,0 +1,92 @@
+
+Note: No compatibility mode selected!
+
+
+Circuit: p1 generic nonlinear t-type circuit: qs_aged25_125
+
+Doing analysis at TEMP = 25.000000 and TNOM = 27.000000
+
+Using KLU as Direct Linear Solver
+
+Initial Transient Solution
+--------------------------
+
+Node                                   Voltage
+----                                   -------
+pos                                        150
+neg                                       -150
+neutral                             -0.0182118
+ga1                                          0
+ga2                                          1
+ga3                                          1
+ga4                                          0
+ya1                                   0.700749
+zshift                                0.650749
+xa1                                   0.650747
+pa                                  -0.0182118
+ya2                               -3.85966e-20
+xa2                               -7.71933e-20
+ma                                -3.75232e-06
+ya3                                 -0.0182118
+xa3                                 -0.0182118
+ya4                                    -149.33
+xa4                                    -149.33
+ra                                  -0.0182118
+ea                                  -0.0182118
+gb1                                          0
+gb2                                          1
+gb3                                          1
+gb4                                          0
+yb1                                   0.650759
+xb1                                   0.650757
+pb                                  -0.0182118
+yb2                               -3.85966e-20
+xb2                               -7.71932e-20
+mb                                -3.75231e-06
+yb3                                 -0.0182118
+xb3                                 -0.0182118
+yb4                                    -149.33
+xb4                                    -149.33
+rb                                  -0.0182118
+eb                                  -0.0182118
+gc1                                          0
+gc2                                          1
+gc3                                          1
+gc4                                          0
+yc1                                   0.650759
+xc1                                   0.650757
+pc                                  -0.0182118
+yc2                               -3.85966e-20
+xc2                               -7.71932e-20
+mc                                -3.75231e-06
+yc3                                 -0.0182118
+xc3                                 -0.0182118
+yc4                                    -149.33
+xc4                                    -149.33
+rc                                  -0.0182118
+ec                                  -0.0182118
+bemfc#branch                       1.89323e-08
+bemfb#branch                       1.89323e-08
+bemfa#branch                       -3.8065e-08
+bdrift#branch                      0.000149292
+lc#branch                          1.85681e-08
+lb#branch                          1.85681e-08
+la#branch                         -3.84292e-08
+vgc4#branch                                  0
+vgc3#branch                             -1e-08
+vgc2#branch                             -1e-08
+vgc1#branch                                  0
+vgb4#branch                                  0
+vgb3#branch                             -1e-08
+vgb2#branch                             -1e-08
+vgb1#branch                                  0
+vga4#branch                                  0
+vga3#branch                             -1e-08
+vga2#branch                             -1e-08
+vga1#branch                                  0
+vneg#branch                        0.000467376
+vpos#branch                       -0.000449498
+
+
+No. of Data Rows : 426578
+ngspice-47 done

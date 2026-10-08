@@ -1,0 +1,38 @@
+{
+  "kind": "offline_numerical_solver_intervention",
+  "hardware_run": false,
+  "periods": 1024,
+  "voltage_tolerance_V": 1e-06,
+  "cases": [
+    {
+      "name": "aged75_tol1uV250",
+      "temperature_C": 75,
+      "aged": true,
+      "max_step_s": 2.5e-07,
+      "voltage_tolerance_V": 1e-06,
+      "estimate_V_ohm": [
+        -0.06326604500069416,
+        0.0021679113782802698
+      ],
+      "rank": 36,
+      "target_defect": [
+        2.3359092438113294e-13,
+        1.5907414274707321e-15
+      ],
+      "retained": 942,
+      "neutral_current_sum_max_A": 1.0789259875298995e-05,
+      "netlist_sha256": "49ff3157ba15f6892125d39bade2b89a6f6b18f0bfc54bc0fe1a805d47cc0a84",
+      "log": "aged75_tol1uV250.log",
+      "log_warning_lines": []
+    }
+  ],
+  "failures": [
+    {
+      "name": "aged75_tol1uV125",
+      "error": "\nNote: No compatibility mode selected!\n\n\nCircuit: p1 generic nonlinear t-type circuit: aged75_tol1uv125\n\nDoing analysis at TEMP = 75.000000 and TNOM = 27.000000\n\nUsing KLU as Direct Linear Solver\n\nInitial Transient Solution\n--------------------------\n\nNode                                   Voltage\n----                                   -------\npos                                        150\nneg                                       -150\nneutral                             -0.0167421\nga1                                          0\nga2                                          1\nga3                                          1\nga4                                          0\nya1                                   0.614319\nzshift                                0.564319\nxa1                                   0.564318\npa                                  -0.0167421\nya2                               -2.56159e-16\nxa2                               -5.12318e-16\nma                                 -0.00123669\nya3                                 -0.0167421\nxa3                                 -0.0167421\nya4                                   -149.418\nxa4                                   -149.418\nra                                  -0.0167421\nea                                  -0.0167421\ngb1                                          0\ngb2                                          1\ngb3                                          1\ngb4                                          0\nyb1                                   0.564331\nxb1                                   0.564329\npb                                  -0.0167421\nyb2                               -2.56159e-16\nxb2                               -5.12318e-16\nmb                                 -0.00123669\nyb3                                 -0.0167421\nxb3                                 -0.0167421\nyb4                                   -149.418\nxb4                                   -149.418\nrb                                  -0.0167421\neb                                  -0.0167421\ngc1                                          0\ngc2                                          1\ngc3                                          1\ngc4                                          0\nyc1                                   0.564331\nxc1                                   0.564329\npc                                  -0.0167421\nyc2                               -2.56159e-16\nxc2                               -5.12318e-16\nmc                                 -0.00123669\nyc3                                 -0.0167421\nxc3                                 -0.0167421\nyc4                                   -149.418\nxc4                                   -149.418\nrc                                  -0.0167421\nec                                  -0.0167421\nbemfc#branch                       1.86491e-08\nbemfb#branch                       1.86491e-08\nbemfa#branch                      -3.74824e-08\nbdrift#branch                       0.00014938\nlc#branch                          1.83143e-08\nlb#branch                          1.83143e-08\nla#branch                         -3.78173e-08\nvgc4#branch                                  0\nvgc3#branch                             -1e-08\nvgc2#branch                             -1e-08\nvgc1#branch                                  0\nvgb4#branch                                  0\nvgb3#branch                             -1e-08\nvgb2#branch                             -1e-08\nvgb1#branch                                  0\nvga4#branch                                  0\nvga3#branch                             -1e-08\nvga2#branch                             -1e-08\nvga1#branch                                  0\nvneg#branch                        0.000467652\nvpos#branch                       -0.000449758\n\ndoAnalyses: TRAN:  Timestep too small; time = 0.0314499, timestep = 1.5625e-19: trouble with node \"vneg#branch\"\n\n\ntran simulation(s) aborted\n\nNo. of Data Rows : 558876\nngspice-47 done\n",
+      "max_step_s": 1.25e-07,
+      "voltage_tolerance_V": 1e-06
+    }
+  ],
+  "completed_pair": false
+}

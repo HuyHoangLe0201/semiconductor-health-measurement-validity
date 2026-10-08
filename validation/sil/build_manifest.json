@@ -1,0 +1,18 @@
+{
+  "compiler": "MSVC",
+  "file_version": "19.29.30156.0 built by: cloudtest",
+  "product_version": "14.29.30156.0",
+  "target": "x64",
+  "flags": [
+    "/O2",
+    "/fp:precise",
+    "/W4",
+    "/LD"
+  ],
+  "binary": "sil_core.dll",
+  "source_units": [
+    "sil_core.c",
+    "sil_plant.c"
+  ],
+  "hardware_validation": false
+}

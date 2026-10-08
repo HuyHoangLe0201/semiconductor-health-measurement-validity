@@ -1,0 +1,725 @@
+{
+  "source_url": "http<LOCAL_PATH>",
+  "evidence_kind": "third_party_measured_device_data",
+  "files": [
+    {
+      "device": 2,
+      "file": "Device2__1.mat",
+      "bytes": 24372269,
+      "sha256": "df4c97c340bc5af3946628bdbd1753c3390946d3ad16ed042ee81933acbba20a",
+      "local_source": null,
+      "original_remote_archive_verified": false,
+      "total_transient_captures": 110
+    },
+    {
+      "device": 3,
+      "file": "Device3__1.mat",
+      "bytes": 22096794,
+      "sha256": "9dc97d62bfdbc53231ea6300a6d64952f0b6c3247ed1810d1df20202011635d6",
+      "local_source": null,
+      "original_remote_archive_verified": false,
+      "total_transient_captures": 99
+    },
+    {
+      "device": 4,
+      "file": "Device4__1.mat",
+      "bytes": 24579749,
+      "sha256": "f2da9a8d8d506187d181165ded2778270f6e4475b3f387a7b272143b35191474",
+      "local_source": null,
+      "original_remote_archive_verified": false,
+      "total_transient_captures": 108
+    },
+    {
+      "device": 5,
+      "file": "Device5__1.mat",
+      "bytes": 23445332,
+      "sha256": "06eca258d19829e1b7b84b4a7fb47d4efbcb6c0f8b2de0af0c3fb02f1c175b81",
+      "local_source": null,
+      "original_remote_archive_verified": false,
+      "total_transient_captures": 106
+    }
+  ],
+  "current_channel": "collectorEmitterCurrentSignal, preserved as stored; SI calibration not independently established",
+  "temperature_channel": "packageTemperature; nearest record <=2 s; not measured junction",
+  "excluded": [
+    {
+      "device": 2,
+      "capture": 69,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 2,
+      "capture": 70,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 2,
+      "capture": 72,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 2,
+      "capture": 74,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 2,
+      "capture": 76,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 2,
+      "capture": 77,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 2,
+      "capture": 87,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 2,
+      "capture": 91,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 2,
+      "capture": 97,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 2,
+      "capture": 98,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 2,
+      "capture": 99,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 2,
+      "capture": 100,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 2,
+      "capture": 101,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 2,
+      "capture": 102,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 3,
+      "capture": 54,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 3,
+      "capture": 55,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 3,
+      "capture": 58,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 3,
+      "capture": 59,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 3,
+      "capture": 60,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 3,
+      "capture": 65,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 3,
+      "capture": 66,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 3,
+      "capture": 67,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 3,
+      "capture": 68,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 3,
+      "capture": 69,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 3,
+      "capture": 70,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 3,
+      "capture": 71,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 3,
+      "capture": 72,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 3,
+      "capture": 73,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 3,
+      "capture": 74,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 3,
+      "capture": 75,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 3,
+      "capture": 76,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 3,
+      "capture": 78,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 3,
+      "capture": 79,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 3,
+      "capture": 80,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 3,
+      "capture": 81,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 3,
+      "capture": 82,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 3,
+      "capture": 83,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 3,
+      "capture": 84,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 3,
+      "capture": 85,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 3,
+      "capture": 86,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 3,
+      "capture": 87,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 3,
+      "capture": 89,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 3,
+      "capture": 91,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 3,
+      "capture": 92,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 3,
+      "capture": 93,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 3,
+      "capture": 94,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 3,
+      "capture": 95,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 3,
+      "capture": 96,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 4,
+      "capture": 70,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 4,
+      "capture": 77,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 4,
+      "capture": 78,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 4,
+      "capture": 79,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 4,
+      "capture": 80,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 4,
+      "capture": 81,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 4,
+      "capture": 82,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 4,
+      "capture": 83,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 4,
+      "capture": 84,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 4,
+      "capture": 85,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 4,
+      "capture": 86,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 4,
+      "capture": 87,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 4,
+      "capture": 88,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 4,
+      "capture": 89,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 4,
+      "capture": 90,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 4,
+      "capture": 91,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 4,
+      "capture": 92,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 4,
+      "capture": 93,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 4,
+      "capture": 94,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 4,
+      "capture": 95,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 4,
+      "capture": 96,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 4,
+      "capture": 97,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 4,
+      "capture": 98,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 4,
+      "capture": 99,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 4,
+      "capture": 100,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 4,
+      "capture": 101,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 4,
+      "capture": 102,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 4,
+      "capture": 103,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 4,
+      "capture": 104,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 5,
+      "capture": 61,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 5,
+      "capture": 68,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 5,
+      "capture": 69,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 5,
+      "capture": 70,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 5,
+      "capture": 71,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 5,
+      "capture": 72,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 5,
+      "capture": 73,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 5,
+      "capture": 74,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 5,
+      "capture": 75,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 5,
+      "capture": 76,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 5,
+      "capture": 77,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 5,
+      "capture": 78,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 5,
+      "capture": 79,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 5,
+      "capture": 80,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 5,
+      "capture": 81,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 5,
+      "capture": 83,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 5,
+      "capture": 84,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 5,
+      "capture": 85,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 5,
+      "capture": 86,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 5,
+      "capture": 87,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 5,
+      "capture": 88,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 5,
+      "capture": 89,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 5,
+      "capture": 90,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 5,
+      "capture": 91,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 5,
+      "capture": 92,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 5,
+      "capture": 93,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 5,
+      "capture": 94,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 5,
+      "capture": 95,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 5,
+      "capture": 96,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 5,
+      "capture": 97,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 5,
+      "capture": 98,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 5,
+      "capture": 99,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 5,
+      "capture": 100,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 5,
+      "capture": 101,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 5,
+      "capture": 102,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    },
+    {
+      "device": 5,
+      "capture": 103,
+      "reason": "fewer than 10 eligible 2-us blocks",
+      "eligible_blocks": 0
+    }
+  ],
+  "procedure": "gateEmitterVoltage >10 V; positive current channel >1; Vce>0; exclude 10 us at edges and endpoints; nonoverlapping 2 us medians; at least 10 blocks per waveform"
+}

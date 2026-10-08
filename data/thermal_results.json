@@ -1,0 +1,352 @@
+{
+  "evidence_kind": "offline_simulation",
+  "seed": 20261010,
+  "thermal_model": {
+    "reference_C": 25.0,
+    "alpha_v_transistor_V_K": -0.0015,
+    "alpha_v_diode_V_K": -0.0025,
+    "alpha_r_transistor_ohm_K": 8e-05,
+    "alpha_r_diode_ohm_K": 5e-05,
+    "Rj_transistor_K_W": 0.6,
+    "Rj_diode_K_W": 0.9,
+    "Cj_transistor_J_K": 0.18,
+    "Cj_diode_J_K": 0.12,
+    "Rsink_K_W": 0.1,
+    "Csink_J_K": 20.0,
+    "switching_heat_included": false
+  },
+  "thermal_solver": "Fully coupled RK4 electrical and thermal states; stage-sign bisection to depth 10; heat quadrature; same FCS controller as the isothermal study.",
+  "scope": "Illustrative conduction-heated star RC network with a common sink; no switching heat, thermal device calibration, HIL, bench, thermal interface aging, mechanical states or parasitic commutation.",
+  "records": {
+    "cold_healthy": {
+      "ambient_C": 25.0,
+      "junction_range_C": [
+        25.0,
+        27.815761265443673
+      ],
+      "sink_final_C": 25.686084801489777,
+      "input_heat_J": 22.033705198476888,
+      "cooling_J": 1.2373732646501678,
+      "energy_balance_defect_J": 9.023892744153272e-13,
+      "rank": 36,
+      "retained_periods": 7373
+    },
+    "hot_healthy": {
+      "ambient_C": 75.0,
+      "junction_range_C": [
+        75.0,
+        77.59571377772119
+      ],
+      "sink_final_C": 75.65687515424484,
+      "input_heat_J": 21.10605498333423,
+      "cooling_J": 1.1831528548360297,
+      "energy_balance_defect_J": 2.8528290840768022e-12,
+      "rank": 36,
+      "retained_periods": 7373
+    },
+    "hot_aged": {
+      "ambient_C": 75.0,
+      "junction_range_C": [
+        75.0,
+        77.62246251552801
+      ],
+      "sink_final_C": 75.6613988929008,
+      "input_heat_J": 21.207548877461274,
+      "cooling_J": 1.1912623421460962,
+      "energy_balance_defect_J": 8.355982572538778e-12,
+      "rank": 36,
+      "retained_periods": 7378
+    }
+  },
+  "conditions": [
+    {
+      "name": "healthy_no_compensation",
+      "estimate": [
+        0.046954394915212735,
+        -0.00048654065838015165
+      ],
+      "truth": [
+        0.0,
+        0.0
+      ],
+      "bias": [
+        0.046954394915212735,
+        -0.00048654065838015165
+      ],
+      "nominal_SE": [
+        0.0017213399883209773,
+        0.00012585523498778267
+      ]
+    },
+    {
+      "name": "aged_no_compensation",
+      "estimate": [
+        0.09919139651138963,
+        0.00015598974960451663
+      ],
+      "truth": [
+        0.05,
+        0.0002
+      ],
+      "bias": [
+        0.04919139651138962,
+        -4.401025039548338e-05
+      ],
+      "nominal_SE": [
+        0.0017093821024253871,
+        0.00011724374302912643
+      ]
+    },
+    {
+      "name": "healthy_oracle_junction",
+      "estimate": [
+        2.496949141986629e-05,
+        5.757713356161447e-06
+      ],
+      "truth": [
+        0.0,
+        0.0
+      ],
+      "bias": [
+        2.496949141986629e-05,
+        5.757713356161447e-06
+      ],
+      "nominal_SE": [
+        0.0017213399883209773,
+        0.00012585523498778267
+      ]
+    },
+    {
+      "name": "aged_oracle_junction",
+      "estimate": [
+        0.05003338087720498,
+        0.0002029772024628478
+      ],
+      "truth": [
+        0.05,
+        0.0002
+      ],
+      "bias": [
+        3.3380877204974846e-05,
+        2.9772024628477926e-06
+      ],
+      "nominal_SE": [
+        0.0017093821024253871,
+        0.00011724374302912643
+      ]
+    },
+    {
+      "name": "aged_sink_only",
+      "estimate": [
+        0.048965656096711996,
+        0.00015456845138657612
+      ],
+      "truth": [
+        0.05,
+        0.0002
+      ],
+      "bias": [
+        -0.001034343903288007,
+        -4.543154861342389e-05
+      ],
+      "nominal_SE": [
+        0.0017093821024253871,
+        0.00011724374302912643
+      ]
+    },
+    {
+      "name": "aged_S1_temperature_drift_2K",
+      "estimate": [
+        0.05303338087720488,
+        4.29772024628811e-05
+      ],
+      "truth": [
+        0.05,
+        0.0002
+      ],
+      "bias": [
+        0.0030333808772048804,
+        -0.0001570227975371189
+      ],
+      "nominal_SE": [
+        0.0017093821024253871,
+        0.00011724374302912643
+      ]
+    },
+    {
+      "name": "aged_coefficients_10percent",
+      "estimate": [
+        0.04511757931378585,
+        0.00020767594774873403
+      ],
+      "truth": [
+        0.05,
+        0.0002
+      ],
+      "bias": [
+        -0.004882420686214153,
+        7.675947748734022e-06
+      ],
+      "nominal_SE": [
+        0.0017093821024253871,
+        0.00011724374302912643
+      ]
+    },
+    {
+      "name": "aged_temperature_lag_20ms",
+      "estimate": [
+        0.04999793460202476,
+        0.00021196369072678072
+      ],
+      "truth": [
+        0.05,
+        0.0002
+      ],
+      "bias": [
+        -2.06539797524552e-06,
+        1.1963690726780711e-05
+      ],
+      "nominal_SE": [
+        0.0017093821024253871,
+        0.00011724374302912643
+      ]
+    }
+  ],
+  "calibration_MC": [
+    {
+      "trials": 1000,
+      "offset_drift_bound_K": 2.0,
+      "coefficient_relative_bound": 0.1,
+      "temperature_noise_SD_K": 0.5,
+      "temperature_sample_interval_s": 0.001,
+      "scope": "Fixed noiseless currents and gates; exact conditional linear target map. Temperature and calibration perturbations only; coefficient errors shared between records; offsets drift only in aged record.",
+      "mean": [
+        0.0498795551966107,
+        0.00017604476336831573
+      ],
+      "SD": [
+        0.009114347429323348,
+        0.00036482981574954994
+      ],
+      "interval95": [
+        [
+          0.03303039745272641,
+          -0.0005088002761415427
+        ],
+        [
+          0.0667325517811429,
+          0.0008672114444852509
+        ]
+      ],
+      "current_noise_only_nominal_coverage": [
+        0.248,
+        0.47
+      ]
+    },
+    {
+      "trials": 1000,
+      "offset_drift_bound_K": 5.0,
+      "coefficient_relative_bound": 0.1,
+      "temperature_noise_SD_K": 0.5,
+      "temperature_sample_interval_s": 0.001,
+      "scope": "Fixed noiseless currents and gates; exact conditional linear target map. Temperature and calibration perturbations only; coefficient errors shared between records; offsets drift only in aged record.",
+      "mean": [
+        0.04997097788676045,
+        0.00018614914792463536
+      ],
+      "SD": [
+        0.01181356897441024,
+        0.0004628977731268247
+      ],
+      "interval95": [
+        [
+          0.026489812587513338,
+          -0.0007092260850282265
+        ],
+        [
+          0.07165877772974173,
+          0.0010680463609553186
+        ]
+      ],
+      "current_noise_only_nominal_coverage": [
+        0.214,
+        0.363
+      ]
+    }
+  ],
+  "temperature_offset_gain": [
+    [
+      -0.0014999999999999445,
+      -1.990032635986632e-17,
+      -1.0523598323059627e-16,
+      -2.7700157976835034e-17,
+      2.158477931980821e-18,
+      -3.315419092693103e-16,
+      3.5202409563728224e-17,
+      0.0024999999999995993,
+      1.135870976269604e-16,
+      -2.5796098045735396e-17,
+      4.201489742054754e-17,
+      -8.711294954389408e-17,
+      -8.743107600770192e-18,
+      3.9748564682751124e-17,
+      1.0870553318175633e-17,
+      -8.485394122916512e-18,
+      5.847576546244571e-17,
+      -9.912324901043076e-17,
+      1.8086141308562568e-17,
+      -1.593670267502562e-16,
+      -1.856156016648975e-18,
+      -1.0133718544207486e-17,
+      2.42590105989371e-17,
+      -1.67346751436321e-17
+    ],
+    [
+      7.999999999999654e-05,
+      -1.2308784210385585e-18,
+      3.1734401077006904e-19,
+      -4.5873454503336105e-18,
+      -1.7131500211486905e-18,
+      9.091386565557477e-18,
+      -7.999999999999904e-05,
+      6.7239139547794586e-18,
+      1.9223648551908856e-18,
+      7.292979023320472e-18,
+      -2.6389528312142154e-19,
+      7.227909321008153e-18,
+      6.884138848695398e-19,
+      -5.1824030364387004e-18,
+      -5.970060493455825e-19,
+      -7.151957249085933e-18,
+      -4.065060191672104e-18,
+      -2.264201985918836e-18,
+      -1.1186007903372237e-18,
+      3.719909004039259e-18,
+      2.7272359751659513e-18,
+      -1.2720903432190955e-18,
+      7.013426840153658e-18,
+      3.0261207566616275e-18
+    ]
+  ],
+  "worst_case_offset_gain": [
+    0.00400000000000079,
+    0.0001600000000000748
+  ],
+  "proposed_bias_budget": [
+    0.01,
+    5e-05
+  ],
+  "allowable_relative_offset_K": [
+    2.499999999999506,
+    0.31249999999985395
+  ],
+  "zero_thermal_coefficient_current_difference_A": 1.4210854715202004e-14,
+  "integration_refinement": {
+    "max_current_difference_A": 1.4260157926826444e-05,
+    "max_junction_difference_K": 5.905446158749328e-07,
+    "oracle_target_difference": [
+      4.1474407935782054e-10,
+      1.4533578333864039e-12
+    ]
+  }
+}

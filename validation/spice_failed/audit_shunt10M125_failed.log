@@ -1,0 +1,96 @@
+
+Note: No compatibility mode selected!
+
+
+Circuit: p1 generic nonlinear t-type circuit: audit_shunt10m125
+
+Doing analysis at TEMP = 75.000000 and TNOM = 27.000000
+
+Using KLU as Direct Linear Solver
+
+Initial Transient Solution
+--------------------------
+
+Node                                   Voltage
+----                                   -------
+pos                                        150
+neg                                       -150
+neutral                             -0.0664111
+ga1                                          0
+ga2                                          1
+ga3                                          1
+ga4                                          0
+ya1                                   0.564623
+zshift                                0.514623
+xa1                                   0.514621
+pa                                  -0.0664111
+ya2                               -3.08005e-16
+xa2                                -6.1601e-16
+ma                                 -0.00148119
+ya3                                 -0.0664111
+xa3                                 -0.0664111
+ya4                                   -149.411
+xa4                                   -149.411
+ra                                  -0.0664111
+ea                                  -0.0664111
+gb1                                          0
+gb2                                          1
+gb3                                          1
+gb4                                          0
+yb1                                   0.514644
+xb1                                   0.514642
+pb                                  -0.0664111
+yb2                               -3.08005e-16
+xb2                                -6.1601e-16
+mb                                 -0.00148119
+yb3                                 -0.0664111
+xb3                                 -0.0664111
+yb4                                   -149.411
+xb4                                   -149.411
+rb                                  -0.0664111
+eb                                  -0.0664111
+gc1                                          0
+gc2                                          1
+gc3                                          1
+gc4                                          0
+yc1                                   0.514644
+xc1                                   0.514642
+pc                                  -0.0664111
+yc2                               -3.08005e-16
+xc2                                -6.1601e-16
+mc                                 -0.00148119
+yc3                                 -0.0664111
+xc3                                 -0.0664111
+yc4                                   -149.411
+xc4                                   -149.411
+rc                                  -0.0664111
+ec                                  -0.0664111
+bemfc#branch                       3.32423e-08
+bemfb#branch                       3.32423e-08
+bemfa#branch                      -7.31921e-08
+bdrift#branch                      0.000149379
+lc#branch                          1.99601e-08
+lb#branch                          1.99601e-08
+la#branch                         -8.64743e-08
+vgc4#branch                                  0
+vgc3#branch                             -1e-07
+vgc2#branch                             -1e-07
+vgc1#branch                                  0
+vgb4#branch                                  0
+vgb3#branch                             -1e-07
+vgb2#branch                             -1e-07
+vgb1#branch                                  0
+vga4#branch                                  0
+vga3#branch                             -1e-07
+vga2#branch                             -1e-07
+vga1#branch                                  0
+vneg#branch                        0.000642505
+vpos#branch                       -0.000463407
+
+doAnalyses: TRAN:  Timestep too small; time = 0.0314499, timestep = 1.5625e-19: trouble with node "vneg#branch"
+
+
+tran simulation(s) aborted
+
+No. of Data Rows : 551756
+ngspice-47 done

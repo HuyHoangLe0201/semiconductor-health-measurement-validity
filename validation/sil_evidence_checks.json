@@ -1,0 +1,118 @@
+{
+  "passed": true,
+  "source_parameters_verified_from_local_manufacturer_PDF": true,
+  "source_hash": "f50cd04bd6ec28fd40bc97b379ef91177b75408bcfb2e13ddfbff866d4ce5bf5",
+  "controller_operator_GLS_checks": {
+    "controller_random_vectors": 2000,
+    "controller_mismatches": 0,
+    "nonseparating_status": -3,
+    "thermal_Rsum_verified": true,
+    "static_anchors_verified": true,
+    "independent_plant_C_Python_current_difference_A": 3.914521000680793e-07,
+    "independent_plant_C_Python_temperature_difference_K": 2.623984016736358e-07,
+    "operator_X_difference": 3.552713678800501e-15,
+    "operator_y_difference": 7.172040739078511e-14,
+    "operator_retention_match": true,
+    "short_physical_window_status": -4,
+    "short_physical_window_periods": 128
+  },
+  "trace_checks": [
+    {
+      "name": "sil_clean25_healthy.npz",
+      "sha256": "dfa1f3df811da0ecfa5965cb1e77d0d5ee733465400a898a4ad68e43ff5c2f62",
+      "peak_current_A": 24.870544295851857,
+      "junction_max_C": 52.09513532637226
+    },
+    {
+      "name": "sil_clean25_aged.npz",
+      "sha256": "171d7ea5d50df87cee0fffec296a3bea335e664f3c22bcc371628336f2ba6fb9",
+      "peak_current_A": 24.995257943382033,
+      "junction_max_C": 54.40976540561401
+    },
+    {
+      "name": "sil_clean75_healthy.npz",
+      "sha256": "f83afc223264014107bf8d0e4900b2b72690f4350d5d5172f215d031ce95b902",
+      "peak_current_A": 24.8679677013144,
+      "junction_max_C": 102.6108456611982
+    },
+    {
+      "name": "sil_clean75_aged.npz",
+      "sha256": "679ef421a65056cd72c5a8fc0f2737b0fd2c68853f6dd53fc39412115374d44f",
+      "peak_current_A": 24.91920935556677,
+      "junction_max_C": 102.46533246835146
+    },
+    {
+      "name": "sil_adc16_healthy.npz",
+      "sha256": "5a4f95a1346e009b8fab7c475bb335f4d719792c72d4f535c4f80d5941fa6da7",
+      "peak_current_A": 25.003070857804254,
+      "junction_max_C": 102.42292794342947
+    },
+    {
+      "name": "sil_adc16_aged.npz",
+      "sha256": "a3823f9151442450df085933d44407f29ef8667e554621c305932574a12ffcf8",
+      "peak_current_A": 24.960579573194483,
+      "junction_max_C": 104.44299127011877
+    },
+    {
+      "name": "sil_adc12_healthy.npz",
+      "sha256": "d094943ed5558e1163658552b099a031d9e3937c9a8980ea610bf67b715338f7",
+      "peak_current_A": 24.992182983025458,
+      "junction_max_C": 104.08233612014999
+    },
+    {
+      "name": "sil_adc12_aged.npz",
+      "sha256": "c9c15537d57d1e4b57cb8f03f7afa8cdf2be87f8f191a02e1d40b20999db8bbe",
+      "peak_current_A": 25.01570338238983,
+      "junction_max_C": 102.30356982072965
+    },
+    {
+      "name": "sil_skew_healthy.npz",
+      "sha256": "b4b5fc7447dcf2ebcc6e8bde763f8fece71d71cb17ca76835e8ca1bf648f7f7f",
+      "peak_current_A": 24.925309358163894,
+      "junction_max_C": 101.37755740427828
+    },
+    {
+      "name": "sil_skew_aged.npz",
+      "sha256": "b8b6cb813335980c782a0ed939bdc202414cd4f2a32604fb0da286df36eb52a9",
+      "peak_current_A": 24.94111749246392,
+      "junction_max_C": 103.01975447076505
+    },
+    {
+      "name": "sil_inputdelay_healthy.npz",
+      "sha256": "5f5b62522e420e8652ba8d2f1962c8b2045ccb2506781bd1c39fd909e0c3092b",
+      "peak_current_A": 28.121204043645367,
+      "junction_max_C": 106.96277168007693
+    },
+    {
+      "name": "sil_inputdelay_aged.npz",
+      "sha256": "e0306cd9d8b7dda16a8812a3523b5be9b4e0b4466bf3a34d64dc100bed375ed0",
+      "peak_current_A": 28.28391497934146,
+      "junction_max_C": 108.12408693872707
+    },
+    {
+      "name": "sil_actdelay_healthy.npz",
+      "sha256": "6692c86928d578bf84412e7975d65d382521d71c3541fa8d6b698600dc65f0cb",
+      "peak_current_A": 24.864903564026125,
+      "junction_max_C": 100.53379506577052
+    },
+    {
+      "name": "sil_actdelay_aged.npz",
+      "sha256": "a31b55c080f3352eae1b725c7cd103b96d5f4aabdc23bc9e7b7ea1bea7859ac4",
+      "peak_current_A": 24.88663054965875,
+      "junction_max_C": 102.64634386208223
+    },
+    {
+      "name": "sil_combined_healthy.npz",
+      "sha256": "57ffb6377488e230d02408d4d2c11cbc360c830ea2f2a49f8502149b15e44084",
+      "peak_current_A": 28.7033043374502,
+      "junction_max_C": 103.08922166166896
+    },
+    {
+      "name": "sil_combined_aged.npz",
+      "sha256": "e74e2ecb8aa4d91f0f4543c8566d77215d30aaeaf560d7a2cff52811bbfed9ed",
+      "peak_current_A": 28.087229190802304,
+      "junction_max_C": 105.63510367943144
+    }
+  ],
+  "hardware_validation_performed": false
+}

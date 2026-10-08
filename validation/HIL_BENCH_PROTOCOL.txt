@@ -1,0 +1,153 @@
+P1 validation protocol - 7 October 2026
+
+STATUS
+No HIL device, external controller, physical inverter or synchronized measured
+converter/temperature capture was available. Author-run hardware runs: zero.
+This package contains offline electrothermal and external circuit computations,
+third-party NASA device-data reanalysis, planned tests and a capture-analysis
+prototype. See EXTERNAL_EVIDENCE.txt for the measured-data scope. The two CSV
+fixtures are generated offline and labeled accordingly.
+No real-time platform project was compiled or tested.
+
+COMPLETED EVIDENCE
+Three separately integrated 8192-period records: cold healthy at 25 C,
+hot healthy at 75 C and hot aged at 75 C. Each device has its own junction
+state, coupled through a common sink; device temperatures change electrical
+conduction drops. The hot aged record injects +50 mV and +0.2 milliohm in S1a.
+Eight inference interventions, two 1000-trial calibration studies, a zero-
+temperature-coefficient limit check, thermal first-law checks and a hold-step
+refinement were computed. Parameters are illustrative, not measured calibration.
+See ../data/thermal_results.json and the manuscript thermal section.
+
+REPRODUCE ON THE PRESENT COMPUTER
+From P1_MSSP:
+  $env:OPENBLAS_NUM_THREADS='1'
+  $env:OMP_NUM_THREADS='1'
+  python scripts/thermal_validation.py
+  python scripts/export_validation_fixtures.py
+  python scripts/audit_capture.py validation/offline_hot_aged.csv --baseline validation/offline_cold_healthy.csv --output validation/offline_capture_audit.json
+  powershell -ExecutionPolicy Bypass -File .\build.ps1
+The audit result is an offline oracle analysis, not a hardware pass certificate.
+
+FUTURE CONTROLLER-HIL ARCHITECTURE
+External controller <-> timestamped ADC/gate I/O <-> real-time electrical plant
+                                                      |
+                                  per-device conduction drops and losses
+                                                      |
+                                  junction and common-sink thermal model
+Separate truth/reference channel -> evaluator only, except in declared oracle
+interventions. Deployment estimates must use the declared measured/estimated
+temperature channel; model truth must not be passed as a measured junction.
+
+Use three T-type legs with a fixed midpoint for the baseline study. Map physical
+transistor/diode labels before comparing channels: per leg S1,D1,S2,D2,S3,D3,S4,D4.
+Check paths at both current signs: P+ S1; O+ S2,D3; N+ D4; P- D1; O- S3,D2;
+N- S4. Vendor neutral-device naming may differ. Test this map with isolated
+path/drop injections before full-loop estimation.
+
+Forward voltage drop must affect the electrical circuit. Reporting device
+losses without modifying electrical drops cannot validate this health channel.
+Enable the platform's appropriate current/temperature drop model or implement
+an equivalent series-source model. Typhoon's current T-type documentation and
+half-bridge documentation describe these features and platform limitations:
+https://www.typhoon-hil.com/documentation/typhoon-hil-software-manual/References/t-type_leg.html
+https://www.typhoon-hil.com/documentation/typhoon-hil-software-manual/References/igbt_leg.html
+The documented forward-drop limitation in TyphoonSim must be checked before
+selecting a simulation context. This package is not a TyphoonSim/HIL project.
+
+TIMING AND MODEL CHECKS BEFORE SCORING HEALTH
+Control period: 50 us; nominal gate blanking: 1 us. Proposed electrical solver
+step: 250 ns, then 125 ns for comparison if supported. These are requested
+test points, not verified hardware capabilities. Capture actual gate edges,
+sampling phase, current-sensor delay and controller latency. Require no missing
+frames and no controller deadlines >=50 us in a qualifying controller-HIL run.
+Use actual occupation fractions and transition directions, not a universal
+event indicator. Measure zero-crossing exclusions rather than relying on truth.
+Record solver/firmware/controller versions, compiled model hash and runtime
+overrun diagnostics. The offline RK4 timing is not controller worst-case timing.
+
+Keep the current guard at |i|>0.5 A with no endpoint sign reversal for the
+reference study; report retained and rejected counts. Check the complete scaled
+operator and the target range before computing any covariance. Extra numerical
+rank caused by mismatch must not be treated as repaired structural attribution.
+Do not release both inductance and EMF amplitude without a justified scale
+reference or a separately analyzed constrained prior.
+
+TEST MATRIX
+planned_hil_cases.json contains 32 planned cases, each marked not executed on
+HIL. The main factorial combines ambient 25/75 C, healthy/injected drift and
+six temperature interventions: oracle junction, case proxy, 2 K offset drift,
+5 K offset drift, 10% coefficient error and 20 ms lag. Additional cases cover
+machine mismatch/reference/scale, NPC equivalent/single controls, sample delay,
+solver refinement and dynamic temperature variation.
+The CSV analysis prototype supports only the nominal T-type experiment. NPC,
+other controller rates, varying DC link, phase origin and changed machine
+models need explicit observation-model adaptation before ingestion.
+
+CALIBRATION AND CONDITIONAL GO/NO-GO
+Define drifts at 25 C. Separate temperature calibration from health evaluation;
+use current/temperature grids and held-out conditions. The supplied LUT is an
+illustrative affine model, not an extracted datasheet or bench LUT. For actual
+devices, record source curves, fitted current/temperature range, uncertainty,
+repeatability and an independently obtained machine-scale reference.
+
+Proposed deterministic health-bias allocations are 10 mV and 0.05 milliohm.
+Under the illustrative coefficients, arbitrary per-device offset drift <=eps K
+between healthy and aged records has bounds 4*eps mV and 0.16*eps milliohm.
+The respective offset limits are 2.5 K and 0.3125 K. A common offset has different
+gains: 1 mV/K and zero for the chosen resistance contrast. Stable offsets can
+cancel between records; do not assume unchanged calibration after a restart,
+different sensor, changed thermal boundary or a reference-model change.
+Coefficient error and dynamic temperature error need separate budgets. A case
+sensor cannot be promoted to a junction measurement without an assessed model.
+
+For a detection claim, declare the false-alarm probability per window and a
+mission-level rule for repeated windows. Require adequate target-specific
+information after nuisance projection and include the uncertainty of the healthy
+reference. Small point error in an oracle case does not establish deployment
+power. Report failures and any refusal to attribute an unsupported target.
+
+CAPTURE CONTRACT
+One CSV with N+1 endpoint rows and one same-stem JSON sidecar. q_a/q_b/q_c in row
+k describe the outgoing applied level during period k; final-row levels are
+ignored. Required CSV columns are sample_index, time_s, i_a_A/i_b_A/i_c_A,
+q_a/q_b/q_c, Vdc_V and the 24 T_<phase>_<device>_C columns in declared order.
+Controller-HIL adds controller_latency_s per outgoing period. Raw gate edges,
+unprocessed ADC channels and independent reference signals should be retained
+separately; the canonical CSV does not replace these raw records.
+
+JSON declares evidence_kind (offline_simulation, virtual_hil, controller_hil or
+bench), source method, software/controller/calibration/reference provenance,
+hardware/session/reference identity for hardware captures, sampling period,
+nominal machine model, temperature basis, 24 voltage and 24 slope coefficients,
+reference temperature, nominal current-noise covariance reference, relative
+temperature-offset drift bound, coefficient uncertainty and CSV SHA256.
+The supplied offline sidecars illustrate the contract. Their exact simulated
+machine and oracle junction truth are explicitly declared, with hardware_id null.
+
+audit_capture.py rejects inconsistent labels, digest/timestamp/index failures,
+unsupported observation settings and a case-temperature substitution. It computes
+reference-temperature contrasts, nominal current-noise precision and calibration
+component budgets. It never connects to a device, certifies data authenticity,
+claims an independent physical comparison or runs a bench. Dynamic sensor error,
+model discrepancy and physical-reference uncertainty are not included in its
+component bound. An externally captured record still needs physical-reference
+review. No hardware-validation success is automatically asserted.
+
+OPTIONAL BENCH STAGE IF A PARTNER PROVIDES A RIG
+Collect an independent on-state voltage/current reference at controlled and
+recorded junction-temperature conditions. Estimate healthy v/r from separate
+calibration records, then assess health contrasts on held-out records. Include
+probe offset, common-mode response, timing, current error, junction-estimation
+error and repeated thermal cycles. Case/NTC temperature alone does not establish
+junction truth. Nominate the device/module and nominal limits with the rig owner
+before configuring any electrical test; the illustrative 300 V simulation is
+not an instruction to energize an unspecified converter. Injected HIL changes
+test inference under emulation; a bench aging claim needs a real independent
+change/reference, not a software coefficient renamed as degradation.
+
+REPORTING
+Keep separate counts for offline, virtual HIL, controller-HIL and physical bench
+runs. Record all exclusions and unsupported targets. Update the manuscript only
+with the actual evidence generated by a completed run, its uncertainty, and the
+platform/reference configuration. Until then HIL/bench status remains unperformed.

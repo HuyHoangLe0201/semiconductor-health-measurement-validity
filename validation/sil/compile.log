@@ -1,0 +1,9 @@
+**********************************************************************
+** Visual Studio 2019 Developer Command Prompt v16.11.41
+** Copyright (c) 2021 Microsoft Corporation
+**********************************************************************
+[vcvarsall.bat] Environment initialized for: 'x64'
+sil_core.c
+sil_plant.c
+Generating Code...
+   Creating library sil_core.lib and object sil_core.exp

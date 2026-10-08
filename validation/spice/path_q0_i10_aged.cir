@@ -1,0 +1,32 @@
+path_q0_i10_aged
+Vpos pos 0 150
+Vneg neg 0 -150
+.model td D(Is=1e-15 N=1 Rs=0.015 Cjo=20p)
+.model ad D(Is=1e-13 N=1 Rs=0.015 Cjo=20p)
+.temp 25
+.options rshunt=1e8 reltol=1e-8 abstol=1e-10
+Iload p 0 10.0
+Rsw1 pos y1 1000000
+Vshift y1 xshift 0.05
+Rwire1 xshift x1 0.0102
+Ds1 x1 p td
+Da1 p pos ad
+Rsw2 0 y2 0.01
+Rwire2 y2 x2 0.01
+Ds2 x2 mid td
+Da2 mid 0 ad
+Rsw3 p y3 0.01
+Rwire3 y3 x3 0.01
+Ds3 x3 mid td
+Da3 mid p ad
+Rsw4 p y4 1000000
+Rwire4 y4 x4 0.01
+Ds4 x4 neg td
+Da4 neg p ad
+.control
+set numdgt=15
+op
+print v(p) @ds1[id] @da1[id] @ds2[id] @da2[id] @ds3[id] @da3[id] @ds4[id] @da4[id]
+quit
+.endc
+.end

@@ -1,0 +1,104 @@
+External measured-data and circuit-solver evidence - 7 October 2026
+
+COMPLETED MEASURED-DATA REANALYSIS
+Existing files on <LOCAL_WORKSPACE> were found before downloading any device
+archive. Device2__1.mat, Device3__1.mat, Device4__1.mat and Device5__1.mat
+are retained unchanged under external/nasa, with SHA-256 values and selection
+records in provenance.json. Their MATLAB structures, timestamps and the
+existing local project documentation identify them as NASA PCoE IGBT data.
+The local copies have not been byte-compared against the upstream archive.
+Upstream dataset and license information:
+https://data.nasa.gov/dataset/insulated-gate-bipolar-transistor-igbt-accelerated-aging
+The public collection describes six devices. This reanalysis uses the four
+locally available records, not the complete six-device collection.
+
+423 transient captures, 125000 samples per capture, recorded dt=8 or 16 ns. The rule retains
+310 gated positive-current captures and 107681 nonoverlapping 2-us median blocks.
+113 captures fail the declared eligibility rule. The omitted IDs are preserved.
+One short capture is excluded from split diagnostics because fewer than four
+test blocks remain; 309 captures contribute to those diagnostic medians.
+Package temperatures are nearest-time steady-state readings within 2 s, with
+observed maximum distance 1.096745 s. They are not measured junction truth.
+Source current values are preserved; independent SI calibration and sensor
+error distributions are unavailable. No physical milliohm accuracy is claimed.
+Voltage RMSE is against stored waveform values, not traceable sensor accuracy.
+
+Within each waveform: first 60% of blocks train, omit two boundary blocks,
+remaining blocks test; affine and constant fits use the same split. No future
+normalization, independent-sample confidence interval or known-healthy label.
+Within each device: first half of eligible captures train contextual regressions,
+remaining captures test. Current/temperature/stress/aging co-vary. Improved
+temperature-aware prediction does not isolate a causal temperature coefficient.
+No multilevel converter currents, applied three-phase states, DC-link/reference
+calibration or synchronized machine signals exist in these device files.
+
+EXTERNAL TOOL
+ngspice 47 portable Windows console, obtained from the official project release:
+https://ngspice.sourceforge.io/download.html
+https://sourceforge.net/projects/ngspice/files/ng-spice-rework/47/ngspice-47_64.7z/download
+Archive SHA-256:
+59225971bd68cdd1199443649aa4615a9e6d684933f205ab49006a3942518f5a
+The downloaded archive matches the published release digest. It is extracted
+locally without registry changes or global PATH changes. The runtime COPYING
+notice is retained. scripts/fetch_ngspice.ps1 prepares this portable runtime.
+
+Three physical T-type circuit legs use gated conductance branches, series
+diodes, antiparallel diodes and an R-L-back-EMF star load. Native nonlinear
+diodes determine conduction; the simulator does not receive a path matrix or
+a synthetic residual. These are generic conduction surrogates, not calibrated
+IGBT macromodels. Native diode temperature dependence is used at uniform 25/75 C.
+There is no junction/sink RC network or measured temperature channel in this
+external solver stage. The existing Python study supplies the separate coupled
+electrothermal experiments, with declared illustrative parameters.
+
+Recorded controller states are replayed for 1024 periods, Ts=50 us. Adjacent
+state changes retain shared midpoint gates; newly activated gates wait 1 us.
+Gate transition is a smooth 100-ns logarithmic conductance ramp (50 ns at the
+initial off edge). On/off conductance: 100 S/1e-6 S. Gated branches have a
+10-milliohm series resistor; all diodes have Rs=15 milliohm and Cjo=20 pF.
+Diode Is=1e-15 A (gated branch), 1e-13 A (antiparallel), N=1, TNOM=27 C.
+Gmin, rshunt=1e8 ohm and a neutral reference resistor=1e9 ohm regularize nodes.
+Finite off conduction is part of this generic circuit and is not a measured
+leakage parameter. Back-EMF ramps over the initial 1 us and then is sinusoidal.
+The actual netlists specify every circuit/solver setting. Native solver:
+KLU, Gear order <=2, reltol=1e-6, abstol=1e-9, vntol=1e-8.
+
+Healthy and injected (+50 mV,+0.2 milliohm in S1a) circuits run at both
+temperatures with identical replayed gates and no current noise. Internal step
+limit is 250 ns for all four full 51.2-ms runs. Full-window refinements at both
+125 and 100 ns stopped on a convergence failure at 31.4499 ms; their failed
+netlists/logs are preserved separately and no incomplete export is scored.
+A separate 512-period (25.6-ms) injected 75-C prefix is compared at 250/125 ns.
+This checks only prefix sensitivity; full-window step convergence remains
+unverified. Raw uniform
+endpoint-current exports, netlists, full logs and NPZ traces are supplied.
+An additional voltage-tolerance intervention changes vntol from 1e-8 to 1e-6 V,
+with the same physical circuit, gates and other solver settings. Its full-window
+250-ns run completes; the paired 125-ns run fails at the same commutation and
+is not scored. The completed coarse fit changes by 0.110 microvolt and
+0.00186 microohm relative to the original fit. This does not resolve the
+full-window step-convergence limit. See data/spice_solver_audit.json.
+Existing affine estimation is applied to these nonlinear circuit currents.
+Shared conditional noise precision is not promoted to an experimental interval.
+Six signed paths are checked with 10-A DC probes in healthy and injected circuits
+(12 cases); the injection affects only the positive upper-level path, as expected.
+
+LIMITS
+All external circuit runs are offline. Author-run HIL and converter bench
+runs remain zero. Device-level third-party measurement reanalysis is real
+measured-data evidence, but it does not certify converter-level attribution,
+natural-aging power, controller deadline performance or thermal calibration.
+An additional CORA dataset DOI 10.34810/DATA3204 was identified online, but its
+API returned a browser anti-bot page and the built-in browser could not attach.
+No CORA file was acquired or analysed; no result is attributed to that dataset.
+
+REPRODUCTION (from P1_MSSP; one BLAS/OpenMP thread)
+  python scripts/external_device_validation.py
+  powershell -ExecutionPolicy Bypass -File scripts/fetch_ngspice.ps1
+  python scripts/spice_validation.py --periods 1024
+  python scripts/spice_solver_audit.py
+  python scripts/check_external_evidence.py
+  python scripts/external_figures.py
+  powershell -ExecutionPolicy Bypass -File build.ps1
+To regenerate only measured-data plots/tables from saved blocks:
+  python scripts/external_device_validation.py --reuse

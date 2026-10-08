@@ -1,0 +1,48 @@
+{
+  "source_csv": "<LOCAL_WORKSPACE>\\validation\\offline_hot_aged.csv",
+  "evidence_kind": "offline_simulation",
+  "endpoint_samples": 8193,
+  "periods": 8192,
+  "rank": 36,
+  "retained_periods": 7378,
+  "unprojected_current_sum_max_A": 7.105427357601002e-15,
+  "deadline": null,
+  "baseline": {
+    "source_csv": "<LOCAL_WORKSPACE>\\validation\\offline_cold_healthy.csv",
+    "evidence_kind": "offline_simulation",
+    "endpoint_samples": 8193,
+    "periods": 8192,
+    "rank": 36,
+    "retained_periods": 7373,
+    "unprojected_current_sum_max_A": 6.661338147750939e-15,
+    "deadline": null
+  },
+  "status": "offline_capture_analysis",
+  "hardware_validation_performed": false,
+  "target_definition": [
+    "v_S1a_minus_v_D4a_at_25C",
+    "r_S1a_minus_r_S4a_at_25C"
+  ],
+  "healthy_reference_subtracted": true,
+  "estimate": [
+    0.050033380877227515,
+    0.00020297720246261145
+  ],
+  "current_noise_only_nominal_SE": [
+    0.0017093821024253867,
+    0.00011724374302912627
+  ],
+  "calibration_component_bound": [
+    0.0,
+    0.0
+  ],
+  "calibration_component_bias_budget": [
+    0.01,
+    5e-05
+  ],
+  "calibration_component_budget_met": [
+    true,
+    true
+  ],
+  "limitations": "Conditional prototype with declared affine model. Bounds cover constant offset drift and shared coefficient uncertainty only; dynamic temperature error, noise, commutation/model discrepancy and hardware-reference uncertainty are omitted. Provenance fields are consistency checks, not authentication. No HIL/bench execution is performed by this script."
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "name": "audit_shunt1M125",
+    "completed": false,
+    "changes": [
+      [
+        "rshunt=1e8",
+        "rshunt=1e6"
+      ]
+    ],
+    "returncode": 0,
+    "failure_tail": "                                 0\nvga4#branch                                  0\nvga3#branch                             -1e-06\nvga2#branch                             -1e-06\nvga1#branch                                  0\nvneg#branch                         0.00239207\nvpos#branch                       -0.000598663\n\ndoAnalyses: TRAN:  Timestep too small; time = 0.0314499, timestep = 1.5625e-19: trouble with B-instance bswc2\n\n\ntran simulation(s) aborted\n\nNo. of Data Rows : 564200\nngspice-47 done\n"
+  },
+  {
+    "name": "audit_shunt10M125",
+    "completed": false,
+    "changes": [
+      [
+        "rshunt=1e8",
+        "rshunt=1e7"
+      ]
+    ],
+    "returncode": 0,
+    "failure_tail": "                               0\nvga4#branch                                  0\nvga3#branch                             -1e-07\nvga2#branch                             -1e-07\nvga1#branch                                  0\nvneg#branch                        0.000642505\nvpos#branch                       -0.000463407\n\ndoAnalyses: TRAN:  Timestep too small; time = 0.0314499, timestep = 1.5625e-19: trouble with node \"vneg#branch\"\n\n\ntran simulation(s) aborted\n\nNo. of Data Rows : 551756\nngspice-47 done\n"
+  }
+]

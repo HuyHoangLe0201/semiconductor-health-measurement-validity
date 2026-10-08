@@ -1,0 +1,360 @@
+{
+  "periods": 4096,
+  "Ts_s": 5e-05,
+  "calibration_pairs": 200,
+  "evaluation_triplets": 400,
+  "case_C": 75.0,
+  "hardware": false,
+  "noise_A": 0.002,
+  "weight_rule": "sigma^2 = (2 mA)^2 + LSB^2/12; MA(1) midpoint reference only",
+  "pairing": "Independent PCG64 streams for reference, null-test, injected-test. Common-noise comparator separately labeled.",
+  "calibration_rule": "Per-target order statistic of abs(null difference)/nominal independent-record SE; rank ceil(.95*(n_cal+1)); no validation/injection labels used.",
+  "scope": "Offline exchangeable simulated null calibration, empirical held-out alternative coverage and detection; no physical accuracy or universal GUM coverage.",
+  "scenarios": {
+    "16": {
+      "accepted": 400,
+      "rejected": 0,
+      "calibration_quantiles": [
+        2.181387809038329,
+        1.9007239979549893
+      ],
+      "calibration_rank": 191,
+      "mean": [
+        0.0499723401329792,
+        0.0001974695402021061
+      ],
+      "bias": [
+        -2.765986702080803e-05,
+        -2.530459797894033e-06
+      ],
+      "SD": [
+        0.0024994581243689483,
+        0.00016475423097490853
+      ],
+      "RMSE": [
+        0.002496485080353749,
+        0.00016456761515973284
+      ],
+      "median_nominal_SE": [
+        0.0024737393980039935,
+        0.00018003423127697216
+      ],
+      "median_calibrated_halfwidth": [
+        0.005396184965543727,
+        0.0003421953838415197
+      ],
+      "null_mean": [
+        -0.00011169719706025177,
+        -6.1793918165462274e-06
+      ],
+      "targets": [
+        {
+          "name": "voltage",
+          "nominal_coverage": {
+            "successes": 375,
+            "trials": 400,
+            "rate": 0.9375,
+            "exact95": [
+              0.9091176304486912,
+              0.9591485429904449
+            ]
+          },
+          "calibrated_alternative_coverage": {
+            "successes": 386,
+            "trials": 400,
+            "rate": 0.965,
+            "exact95": [
+              0.9419727383175838,
+              0.9807355334141201
+            ]
+          },
+          "nominal_false_alarm": {
+            "successes": 13,
+            "trials": 400,
+            "rate": 0.0325,
+            "exact95": [
+              0.017416146084212134,
+              0.05493481675069279
+            ]
+          },
+          "calibrated_false_alarm": {
+            "successes": 8,
+            "trials": 400,
+            "rate": 0.02,
+            "exact95": [
+              0.00867317036911831,
+              0.03902627671162005
+            ]
+          },
+          "nominal_detection": {
+            "successes": 400,
+            "trials": 400,
+            "rate": 1.0,
+            "exact95": [
+              0.9908201954163347,
+              1.0
+            ]
+          },
+          "calibrated_detection": {
+            "successes": 400,
+            "trials": 400,
+            "rate": 1.0,
+            "exact95": [
+              0.9908201954163347,
+              1.0
+            ]
+          }
+        },
+        {
+          "name": "resistance",
+          "nominal_coverage": {
+            "successes": 388,
+            "trials": 400,
+            "rate": 0.97,
+            "exact95": [
+              0.9481827845694164,
+              0.9844044470001057
+            ]
+          },
+          "calibrated_alternative_coverage": {
+            "successes": 383,
+            "trials": 400,
+            "rate": 0.9575,
+            "exact95": [
+              0.9328238855613031,
+              0.9750503807978852
+            ]
+          },
+          "nominal_false_alarm": {
+            "successes": 21,
+            "trials": 400,
+            "rate": 0.0525,
+            "exact95": [
+              0.032788424577153724,
+              0.0791346304869443
+            ]
+          },
+          "calibrated_false_alarm": {
+            "successes": 22,
+            "trials": 400,
+            "rate": 0.055,
+            "exact95": [
+              0.034785480203722255,
+              0.08208923736452574
+            ]
+          },
+          "nominal_detection": {
+            "successes": 72,
+            "trials": 400,
+            "rate": 0.18,
+            "exact95": [
+              0.14358758351898537,
+              0.22122569809595702
+            ]
+          },
+          "calibrated_detection": {
+            "successes": 77,
+            "trials": 400,
+            "rate": 0.1925,
+            "exact95": [
+              0.15501094507467583,
+              0.2346095475418194
+            ]
+          }
+        }
+      ],
+      "common_noise_comparator": {
+        "trials": 100,
+        "common_SD": [
+          0.0018647316974293232,
+          0.0001371711749946077
+        ],
+        "independent_SD": [
+          0.0027892112064888553,
+          0.00015758581166752469
+        ],
+        "SD_ratio": [
+          0.6685516296116939,
+          0.8704538406288259
+        ]
+      }
+    },
+    "12": {
+      "accepted": 400,
+      "rejected": 0,
+      "calibration_quantiles": [
+        2.0595734561321786,
+        1.8425758761466144
+      ],
+      "calibration_rank": 191,
+      "mean": [
+        0.049434541306847414,
+        0.00014519767319874288
+      ],
+      "bias": [
+        -0.0005654586931526025,
+        -5.4802326801257023e-05
+      ],
+      "SD": [
+        0.006079461499324049,
+        0.000433930668484924
+      ],
+      "RMSE": [
+        0.006098130535264134,
+        0.00043683907850829406
+      ],
+      "median_nominal_SE": [
+        0.00614167590329927,
+        0.00044231118578962915
+      ],
+      "median_calibrated_halfwidth": [
+        0.012649232666601794,
+        0.0008149919206857739
+      ],
+      "null_mean": [
+        -0.0005015398682236883,
+        1.2968110953543907e-07
+      ],
+      "targets": [
+        {
+          "name": "voltage",
+          "nominal_coverage": {
+            "successes": 388,
+            "trials": 400,
+            "rate": 0.97,
+            "exact95": [
+              0.9481827845694164,
+              0.9844044470001057
+            ]
+          },
+          "calibrated_alternative_coverage": {
+            "successes": 389,
+            "trials": 400,
+            "rate": 0.9725,
+            "exact95": [
+              0.9513284510919109,
+              0.9861938697657968
+            ]
+          },
+          "nominal_false_alarm": {
+            "successes": 22,
+            "trials": 400,
+            "rate": 0.055,
+            "exact95": [
+              0.034785480203722255,
+              0.08208923736452574
+            ]
+          },
+          "calibrated_false_alarm": {
+            "successes": 16,
+            "trials": 400,
+            "rate": 0.04,
+            "exact95": [
+              0.023033395740548884,
+              0.06414601093905074
+            ]
+          },
+          "nominal_detection": {
+            "successes": 400,
+            "trials": 400,
+            "rate": 1.0,
+            "exact95": [
+              0.9908201954163347,
+              1.0
+            ]
+          },
+          "calibrated_detection": {
+            "successes": 400,
+            "trials": 400,
+            "rate": 1.0,
+            "exact95": [
+              0.9908201954163347,
+              1.0
+            ]
+          }
+        },
+        {
+          "name": "resistance",
+          "nominal_coverage": {
+            "successes": 379,
+            "trials": 400,
+            "rate": 0.9475,
+            "exact95": [
+              0.9208653695130556,
+              0.9672115754228463
+            ]
+          },
+          "calibrated_alternative_coverage": {
+            "successes": 375,
+            "trials": 400,
+            "rate": 0.9375,
+            "exact95": [
+              0.9091176304486912,
+              0.9591485429904449
+            ]
+          },
+          "nominal_false_alarm": {
+            "successes": 15,
+            "trials": 400,
+            "rate": 0.0375,
+            "exact95": [
+              0.021137674784348935,
+              0.06109697662390072
+            ]
+          },
+          "calibrated_false_alarm": {
+            "successes": 20,
+            "trials": 400,
+            "rate": 0.05,
+            "exact95": [
+              0.030805241143265938,
+              0.07616697275514256
+            ]
+          },
+          "nominal_detection": {
+            "successes": 22,
+            "trials": 400,
+            "rate": 0.055,
+            "exact95": [
+              0.034785480203722255,
+              0.08208923736452574
+            ]
+          },
+          "calibrated_detection": {
+            "successes": 27,
+            "trials": 400,
+            "rate": 0.0675,
+            "exact95": [
+              0.044950801192253226,
+              0.09669190685305207
+            ]
+          }
+        }
+      ],
+      "common_noise_comparator": {
+        "trials": 100,
+        "common_SD": [
+          0.006430456518196035,
+          0.0003987013588019711
+        ],
+        "independent_SD": [
+          0.006502531993983876,
+          0.0004623423290000001
+        ],
+        "SD_ratio": [
+          0.9889157829819946,
+          0.8623509763086629
+        ]
+      }
+    }
+  },
+  "hashes": {
+    "scripts/sil_independent_mc.py": "8bc365129c09dc670cadc78ace4d49bfd0d98351a342b7da529412e640c36ca4",
+    "scripts/sil_mc_native.c": "2ed2229e76ab006c20173d3c68f9a77afa18ce32668c51dea19a10fa14a488d9",
+    "scripts/sil_core.c": "e211ecab0b95bfa5a1ed627aec55a205e9e17ce64a382b6ac5a1918fde72d031",
+    "scripts/sil_plant.c": "d60a65af24e71f02c09e04bce9236cca0414e816dcac415a4e3c9a553852983b",
+    "scripts/sil_basis.h": "9ae741a7f15526de5719202510fe0548dd46bd66cc9bb578ea01094320487bca",
+    "validation/sil_reporting/sil_reporting.dll": "723a5509115bb17adbdd7433f9e9db588b11fd2768677739b8de340ea657a144",
+    "data/independent_sil/trials.jsonl": "25daf28c9e68e0500fb284f8d6be1f87ebc9b1c9951712e72b8cfe66aa5f9296"
+  }
+}

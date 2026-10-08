@@ -1,0 +1,45 @@
+\begin{tikzpicture}[x=1cm,y=1cm]\path[use as bounding box] (0,0) rectangle (16.6,15.8);
+\node[head] at (0.1,15.45){(a) Equal sample count and mean current};\draw[wire] (0.1,15.17)--(7.699999999999999,15.17);
+\node[head] at (8.35,15.45){(b) Profile out the slope column};\draw[wire] (8.35,15.17)--(16.4,15.17);
+\begin{axis}[mathaxis,at={(.8cm,10.5cm)},anchor=south west,width=7.2cm,height=4.5cm,
+ xmin=-.15,xmax=2.15,ymin=.1,ymax=1.15,xtick={0,.8,1,1.2,2},ytick={.35,.85},yticklabels={Wide,Narrow},
+ xlabel={Normalized current $u$},ylabel={Design},clip=false]
+\addplot[only marks,mark=o,mark size=3pt] coordinates {(.8,.85)(1.2,.85)};
+\addplot[only marks,mark=*,mark size=2pt] coordinates {(0,.35)(2,.35)};
+\draw[<->] (axis cs:.8,.85)--(axis cs:1.2,.85);
+\draw[<->] (axis cs:0,.35)--(axis cs:2,.35);
+\draw[dashed] (axis cs:1,.1)--(axis cs:1,1.1);
+\node[tinytext,anchor=south] at (axis cs:1,1.08){$\bar u=1$};
+\node[tinytext,anchor=west] at (axis cs:1.25,.9){$2\times$ at each point};
+\node[tinytext,anchor=west] at (axis cs:.1,.16){$N=4$, identical noise variance};\end{axis}
+\node[eq] at (3.9,9.62){$y_k=v+u_kr+w_k,\quad w_k\overset{\mathrm{iid}}\sim\mathcal N(0,\sigma^2)$};
+\draw[arr] (9.1,11.0)--(15.9,11.0) node[above left] {$\spanop\{u\}$};
+\draw[arr] (9.6,11.0)--(14.0,14.4) node[above] {$\one$};
+\draw[dashed,wire] (14,11)--(14,14.4);
+\draw[arr,line width=.95pt] (14,11)--(14,14.4) node[right,midway] {$M_u\one$};
+\draw[wire] (13.8,11)--(13.8,11.2)--(14,11.2);
+\draw (11,11) arc[start angle=0,end angle=37.7,radius=1.4];
+\node at (11.45,11.45){$\phi$};
+\node[eq] at (12.35,10.05){$M_u=I-uu\trans/(u\trans u),\quad d_0=\sin^2\phi$};
+\node[head] at (0.1,9.15){(c) Exact profiled information};\draw[wire] (0.1,8.870000000000001)--(7.699999999999999,8.870000000000001);
+\node[head] at (8.35,9.15){(d) Information lost as the angle closes};\draw[wire] (8.35,8.870000000000001)--(16.4,8.870000000000001);
+\node[eq] at (3.9,8.32){$\rho=\frac{\one\trans u}{\sqrt{N}\|u\|},\quad d_0=1-\rho^2=1-\bar u^2/\overline{u^2}$};
+\node[eq] at (3.9,7.27){$J_v=\sigma^{-2}\one\trans M_u\one=Nd_0/\sigma^2$\\[5pt]
+$\widehat v=\frac{\one\trans M_uy}{Nd_0},\quad\Var(\widehat v)=\frac{\sigma^2}{Nd_0}$};
+\node[eq] at (3.9,5.71){$\begin{array}{c|c|c|c}\text{Design}&d_0&\rho^2&\Var(\widehat v)/\sigma^2\\\hline
+\text{Narrow}&1/26&25/26&13/2\\\text{Wide}&1/2&1/2&1/2\end{array}$};
+\node[eq] at (3.9,4.25){$M_u\one=\begin{cases}(3,3,-2,-2)\trans/13&\text{narrow},\\(1,1,0,0)\trans&\text{wide}.\end{cases}$};
+\node[tinytext,align=center] at (3.9,2.85){At the same $N$ and $\sigma$, wide excitation gives\\13 times more information about $v$.\\More samples at one fixed nonzero current do not\\separate $v$ from the unknown slope $r$.};
+\begin{semilogyaxis}[mathaxis,at={(9.05cm,3.75cm)},anchor=south west,width=7.15cm,height=5.0cm,
+ xmin=0,xmax=90,ymin=1,ymax=1000,xtick={0,15,30,45,60,90},ytick={1,10,100,1000},
+ xlabel={Column angle $\phi$ [degrees]},ylabel={$N\Var(\widehat v)/\sigma^2$}]
+\addplot[domain=2:90,samples=150,line width=.85pt]{1/(sin(x)^2)};
+\addplot[only marks,mark=o,mark size=2.2pt] coordinates {(11.309932,26)};
+\addplot[only marks,mark=*,mark size=2pt] coordinates {(45,2)};
+\node[tinytext,anchor=south west] at (axis cs:13,26){Narrow};
+\node[tinytext,anchor=south west] at (axis cs:47,2){Wide};\end{semilogyaxis}
+\node[eq] at (12.35,2.45){$u=u_0\one\ (u_0\neq0)\Rightarrow M_u\one=0$\\[5pt]
+$\ker[\one\ u]=\spanop\{(-u_0,1)\trans\}$};
+\draw[wire] (.1,1.42)--(16.4,1.42);
+\node[tinytext,align=center] at (8.25,.78){Design chain: current spread $\longrightarrow$ column angle $\longrightarrow$ retained information $\longrightarrow$ target precision.\\This is a one-path subproblem; multi-path and shared dead-time designs still require the full support test.};
+\end{tikzpicture}

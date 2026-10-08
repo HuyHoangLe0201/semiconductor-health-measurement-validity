@@ -1,0 +1,67 @@
+{
+  "edition": "3: mathematical geometry and visual companion plates",
+  "figures": 10,
+  "slugs": [
+    "01_incidence_kernel",
+    "02_joint_kernel",
+    "03_projection_svd",
+    "04_shared_information",
+    "05_thermal_gauge",
+    "06_reference_decision",
+    "07_excitation_geometry",
+    "08_likelihood_fibre",
+    "09_thermal_dynamics",
+    "10_repeated_decisions"
+  ],
+  "sources": [
+    "main.tex: incidence, joint kernel, profiled SVD and shared information",
+    "thermal_identifiability.tex",
+    "measurement_baseline.tex",
+    "measurement_independent_sil.tex"
+  ],
+  "numerical_source": "data/independent_sil_results.json",
+  "numerical_source_sha256": "24d585115d00a71eedeebbfefd33f151a2c28e90c0d0eefea8c02d6a5c88d944",
+  "illustrative_settings": {
+    "singular_values": [
+      1,
+      0.2,
+      0
+    ],
+    "balanced_occupancy": [
+      0.5,
+      0.5
+    ],
+    "d0": 0.25,
+    "thermal_scalar_gain_mV_per_K": 2,
+    "thermal_scalar_observation_mV": 10
+  },
+  "analytical_companion_settings": {
+    "narrow_currents": [
+      0.8,
+      0.8,
+      1.2,
+      1.2
+    ],
+    "wide_currents": [
+      0,
+      0,
+      2,
+      2
+    ],
+    "target_tangent": [
+      1,
+      1,
+      0
+    ],
+    "temperature_step_K": 8,
+    "lag_gain_mV_per_K": 2.5,
+    "thermal_budget_mV": 5,
+    "lag_model": "first-order analytic step; pointwise correction",
+    "per_test_alpha": 0.05,
+    "repeated_decision_curve": "independent-test scenario",
+    "trajectory_protocol": "proposed, not evaluated"
+  },
+  "monochrome": true,
+  "hardware": false,
+  "AI_visualization_code_assistance": "OpenAI Codex"
+}
